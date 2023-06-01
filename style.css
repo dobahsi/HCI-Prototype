@@ -389,7 +389,8 @@ main {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: var(--primary-bg-color);
+  background-color: var(--primary-color);
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -413,14 +414,14 @@ main {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: var(--secondary-bg-color);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: var(--primary-color);
 }
 
 /* Fading animation */

@@ -569,6 +569,12 @@ section span {
     filter: var(--svg-primary-bg-color-filter);
 }
 
+.main-nav .two-icons{
+    display: flex;
+    align-items: center;
+    margin-left: 55px;
+}
+
 /* footer */
 footer {
     width: 100%;

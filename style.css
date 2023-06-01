@@ -9,7 +9,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
+    font-size: 150%;
 }
 html, body {
     height: 100%;
@@ -211,6 +211,7 @@ nav > * {
 .search {
     width: 100%;
     height: var(--nav-btn-height);
+    font-size:1.5rem;
     background-color: var(--secondary-bg-color);
     border-radius: var(--nav-border-radius);
 
@@ -250,12 +251,18 @@ nav > * {
 
 .nav-1-col, .nav-2-col {
     width: 100%;
+    font-size:var(--nav-font-size); /*無障礙功能、網站搗爛時的縮放(copilot說的)*/
+}
+
+.nav-1-col button {
+    font-size: var(--nav-font-size);/*關於學會、活動公告...*/
 }
 
 .nav-1-col .icon-title-container {
     display: flex;
     justify-content: flex-start; /* Adjust as needed */
-  }
+    font-size: var(--nav-font-size);
+}
   
  .nav-1-col .svg-icon {
     margin-right: 10px; /* Adjust the margin value to control the spacing */
@@ -307,6 +314,10 @@ nav > * {
     align-items: center;
 }
 
+.nav-2-col > a {
+    font-size: var(--nav-font-size);
+}
+
 .nav-2-col > div:nth-child(1) {
     grid-area: btn1;
 }
@@ -339,6 +350,7 @@ nav > * {
     display: flex;
     padding: 10px;
     margin:2.5px 0;
+    font-size:var(--nav-font-size);
 
     white-space: nowrap;
     z-index:3;
@@ -441,8 +453,9 @@ main {
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  font-size: 100%;
+  height: 1rem;
+  width: 1rem;
   margin: 0 2px;
   background-color: var(--secondary-bg-color);
   border-radius: 50%;
@@ -605,6 +618,7 @@ section span {
 .main-nav .two-icons{
     display: flex;
     align-items: center;
+    font-size: 100%;
 }
 
 /* footer */
@@ -622,6 +636,11 @@ footer {
 .footer-header {
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+footer ul {
+    font-size: 1rem;
+    /* font-weight: 600; */
 }
 
 .footer-copyright {

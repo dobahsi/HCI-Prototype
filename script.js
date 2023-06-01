@@ -9,6 +9,14 @@ function toggleMenu() {
     }
 }
 
+const accessButton = document.getElementById('access-button');
+const popup = document.getElementById('accessibility-popup');
+
+accessButton.addEventListener('click', function() {
+  popup.classList.toggle('accessibility-hidden');
+});
+
+
 function toggleExtendUl(e) {
     
     if (e.target.localName == 'box-icon') {

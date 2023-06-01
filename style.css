@@ -315,6 +315,34 @@ nav > * {
     grid-area: btn2;
 }
 
+.accessibility-hidden {
+    display: none;
+  }
+  
+  #accessibility-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-bg-color);
+    padding: 10px;
+    border: 2px solid var(--secondary-bg-color);
+    z-index:2;
+  }
+  
+  #accessibility-popup button {
+    margin-right: 5px;
+    color:var(--primary-color);
+    background-color: var(--secondary-bg-color);
+    border-radius: 0.5rem;
+    display: flex;
+    padding: 10px;
+
+    white-space: nowrap;
+    z-index:3;
+  }
+  
+
 .nav-extend-ul {
     width: 100%;
     background-color: var(--secondary-bg-color);

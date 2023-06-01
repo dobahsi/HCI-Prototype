@@ -18,14 +18,19 @@
             <div class="nav-bg displaynone">
                 <nav>
                     <div class="nav-2-col">
-                        <a href="#">網站導覽</a>
                         <a href="#">回首頁</a>
+                        <a href="#" onclick="toggleMenu()">關掉</a>
                     </div>
 
                     <div class="nav-2-col">
-                        <!-- <button href="#">無障礙功能</button> -->
-                        <button id="theme-button">主題切換</button>
-                        <button href="#">字體大小</button>
+                        <button id="access-button">無障礙功能</button>
+                        <div id="accessibility-popup" class="accessibility-hidden">
+                                <button id="theme-button">主題切換</button>
+                                <button id="theme-button">字體大小</button>
+
+                        </div>
+                        <!-- <button id="theme-button">主題切換</button> -->
+                        <button href="#">網站導覽</button>
                     </div>
 
                     <form class="search">
@@ -123,9 +128,9 @@
                     </div>
                 </nav>
 
-                <button class="menu-close-btn" onclick="toggleMenu()">
+                <!-- <button class="menu-close-btn" onclick="toggleMenu()">
                     <box-icon name='chevron-left'></box-icon>
-                </button>
+                </button> -->
             </div>
             
         </div>

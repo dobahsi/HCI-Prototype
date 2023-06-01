@@ -328,6 +328,7 @@ nav > * {
     padding: 10px;
     border: 2px solid var(--secondary-bg-color);
     z-index:2;
+    flex-direction: column;
   }
   
   #accessibility-popup button {
@@ -337,6 +338,7 @@ nav > * {
     border-radius: 0.5rem;
     display: flex;
     padding: 10px;
+    margin:2.5px 0;
 
     white-space: nowrap;
     z-index:3;

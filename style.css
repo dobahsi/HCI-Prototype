@@ -423,7 +423,8 @@ nav > * {
 
 /* main */
 main {
-    --main-border-radius: 0.5rem;
+    --main-primary-border-radius: 5rem;
+    --main-secondary-border-radius: 0.5rem;
     --main-box-shadow: 5px 5px var(--primary-color);
 
     width: var(--content-width);
@@ -540,8 +541,12 @@ section a {
     color: var(--primary-color);
     background-color: var(--secondary-bg-color);
     box-shadow: var(--main-box-shadow);
-    border-radius: var(--main-border-radius);
     /* transition: 0.1s; */
+}
+
+section a:has(p) {
+    border-radius: var(--main-secondary-border-radius);
+
 }
 
 section a .svg-icon{
@@ -562,6 +567,7 @@ section a:hover .svg-icon{
 section a:has(h2) {
     grid-area: title;
     padding: 1rem;
+    border-radius: var(--main-primary-border-radius);
 
 
     display: flex;
@@ -630,6 +636,7 @@ section span {
     padding: 1rem;
     border-radius: var(--main-border-radius);
     box-shadow: var(--main-box-shadow);
+    border-radius: var(--main-primary-border-radius);
 
     color: var(--primary-color);
     font-size: 2rem;

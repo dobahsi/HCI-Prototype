@@ -461,7 +461,7 @@ section a {
 
 section a .svg-icon{
     filter: var(--svg-primary-color-filter);
-    width: 3.5rem;
+    width: 3rem;
 }
 
 section a:hover {
@@ -557,7 +557,7 @@ section span {
 
 .main-nav>a .svg-icon{
     filter: var(--svg-primary-color-filter);
-    width: 3.5rem;
+    width: 3rem;
 }
 
 .main-nav > a:hover {
@@ -572,7 +572,6 @@ section span {
 .main-nav .two-icons{
     display: flex;
     align-items: center;
-    margin-left: 55px;
 }
 
 /* footer */

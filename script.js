@@ -9,12 +9,11 @@ function toggleMenu() {
     }
 }
 
-const accessButton = document.getElementById('access-button');
 const popup = document.getElementById('accessibility-popup');
 
-accessButton.addEventListener('click', function() {
-  popup.classList.toggle('accessibility-hidden');
-});
+function toggleAccessPopup() {
+    popup.classList.toggle('accessibility-hidden');
+}
 
 
 function toggleExtendUl(e) {

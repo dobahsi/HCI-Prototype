@@ -694,9 +694,9 @@ section span {
 /* footer */
 footer {
     width: 100%;
-    background-color: var(--primary);
+    background-color: var(--on-tertiary-container);
     padding: 1rem;
-    color: var(--primary-bg-color);
+    color: var(--tertiary-container);
 
     display: flex;
     flex-direction: column;

@@ -71,7 +71,7 @@ a[target="_blank"]:after {
 
 /* css start */
 :root {
-    --primary-color: #894848; /*5.01:1 vs grey */
+    --primary-color: #783f3f; /*5.01:1 vs grey */
     --secondary-color: #595959; /* 5.15 vs #dddddd */
     --primary-bg-color: #ffffff;
     --secondary-bg-color: #dddddd;
@@ -81,7 +81,7 @@ a[target="_blank"]:after {
     --focus-color: #ff0000;
     --logo-color: #000000;
 
-    --svg-primary-color-filter:invert(38%) sepia(38%) saturate(680%) hue-rotate(314deg) brightness(78%) contrast(86%);
+    --svg-primary-color-filter:invert(31%) sepia(5%) saturate(5375%) hue-rotate(314deg) brightness(85%) contrast(87%);
     --svg-primary-bg-color-filter:invert(100%) sepia(0%) saturate(2%) hue-rotate(32deg) brightness(107%) contrast(101%);
 }
 

@@ -71,8 +71,8 @@ a[target="_blank"]:after {
 
 /* css start */
 :root {
-    --primary-color: #783f3f; /*5.01:1 vs grey */
-    --secondary-color: #595959; /* 5.15 vs #dddddd */
+    --primary-color: #783f3f;
+    --secondary-color: #525252; 
     --primary-bg-color: #ffffff;
     --secondary-bg-color: #dddddd;
 
@@ -561,13 +561,15 @@ section span {
     /* background-color: var(--primary-bg-color); */
 
     display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: ; */
     gap: 1rem;
 }
 
 .main-nav > a {
     width: 17rem;
+    width: 100%;
     height: var(--nav-btn-height);
     background-color: var(--secondary-bg-color);
     flex-grow: 1;
@@ -583,7 +585,7 @@ section span {
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 
 .main-nav>a .svg-icon{

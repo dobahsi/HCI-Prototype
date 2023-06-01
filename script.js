@@ -18,11 +18,14 @@ function toggleAccessPopup() {
 
 function toggleExtendUl(e) {
     
-    if (e.target.localName == 'box-icon') {
+    if (e.target.localName == 'box-icon' || e.target.localName == 'div') {
         var ul = e.target.parentElement.parentElement.querySelector('.nav-extend-ul');
 
-    } else {
+    } else if(e.target.localName == 'button'){
         var ul = e.target.parentElement.querySelector('.nav-extend-ul');
+
+    } else{
+        var ul = e.target.parentElement.parentElement.parentElement.querySelector('.nav-extend-ul');
     }
 
     var icon = ul.parentElement.querySelector('box-icon');

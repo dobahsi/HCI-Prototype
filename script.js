@@ -41,9 +41,9 @@ function toggleExtendUl(e) {
     
 }
 
-var button = document.getElementById("theme-button");
+var themeButton = document.getElementById("theme-button");
 
-button.addEventListener("click", function() {
+themeButton.addEventListener("click", function() {
     var root = document.documentElement;
 
     if (root.classList.contains("theme-dark")) {
@@ -52,6 +52,22 @@ button.addEventListener("click", function() {
         root.classList.add("theme-dark");
     }
 });
+
+var fontSizeButton = document.getElementById("font-size-button");
+
+fontSizeButton.addEventListener("click", function() {
+    var root = document.documentElement;
+
+    if (root.classList.contains("font-size-small")) {
+        root.classList.remove("font-size-small");
+        root.classList.add("font-size-large");
+    } else if (root.classList.contains("font-size-large")) {
+        root.classList.remove("font-size-large");
+    } else {
+        root.classList.add("font-size-small");
+    }
+});
+
 
 let slideIndex = 1;
 showSlides(slideIndex);

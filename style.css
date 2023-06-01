@@ -11,6 +11,12 @@
     border: 0;
     font-size: 100%;
 }
+.font-size-small {
+    font-size: 50%;
+}
+.font-size-large {
+    font-size: 150%;
+}
 html, body {
     height: 100%;
 }

@@ -439,6 +439,21 @@ main {
   margin: auto;
 }
 
+.slide-content {
+    position: relative;
+  }
+  
+.slide-content .text {
+position: absolute;
+width: 100%;
+background-color: var(--primary-bg-color);
+color: var(--secondary-color);
+padding: 10px;
+text-align: center;
+font-size: 18px;
+bottom: -45px; /* Adjust the value to increase or decrease the distance between the slide and the caption */
+}
+  
 /* Hide the images by default */
 .mySlides {
   display: none;
@@ -491,6 +506,10 @@ main {
   position: absolute;
   top: 0;
 }
+
+.dot-container {
+    margin-top: 40px; /* Adjust the value to increase or decrease the distance between the dots and the slide */
+  }  
 
 /* The dots/bullets/indicators */
 .dot {

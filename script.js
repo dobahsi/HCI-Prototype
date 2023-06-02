@@ -73,7 +73,12 @@ function handleLastMenuItemKeyDown(event) {
         // Prevent the default Tab behavior
         event.preventDefault();
         // Focus the first element in the menu
+        if(nav.classList.contains('menu-opened')){
         document.querySelector('.menu .menu-close-btn').focus();
+        } else {
+            document.querySelector('.menu .header-btn').focus();
+        }
+        
     }
 }
 

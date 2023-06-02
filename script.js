@@ -18,6 +18,7 @@ function toggleMenu() {
         }, 10)
     }
 }
+toggleMenu()
 
 const popup = document.getElementById('accessibility-popup');
 

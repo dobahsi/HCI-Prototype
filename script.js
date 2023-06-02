@@ -27,30 +27,6 @@ function toggleAccessPopup() {
 }
 
 
-function toggleExtendUl(e) {
-    
-    if (e.target.localName == 'box-icon' || e.target.localName == 'div') {
-        var ul = e.target.parentElement.parentElement.querySelector('.nav-extend-ul');
-
-    } else if(e.target.localName == 'button'){
-        var ul = e.target.parentElement.querySelector('.nav-extend-ul');
-
-    } else{
-        var ul = e.target.parentElement.parentElement.parentElement.querySelector('.nav-extend-ul');
-    }
-
-    var icon = ul.parentElement.querySelector('box-icon');
-
-    
-    if (ul.classList.contains('displaynone')) {
-        ul.classList.remove('displaynone')
-        icon.classList.add('rotate180');
-    } else {
-        ul.classList.add('displaynone')
-        icon.classList.remove('rotate180');
-    }   
-    
-}
 
 var themeButton = document.getElementById("theme-button");
 
@@ -79,7 +55,21 @@ fontSizeButton.addEventListener("click", function() {
     }
 });
 
+function goToLayer(layer) {
+    var mainWindow = document.querySelector('.nav-layer-1');
+    var layerWindow = document.querySelector(`.nav-layer-${layer}`);
+    console.log(layerWindow);
+    mainWindow.classList.toggle('nav-layer-exit');
+    layerWindow.classList.toggle('displaynone');
+    setTimeout(() => {
+        
+        layerWindow.classList.toggle('nav-layer-exit');
+    }, 10);
+    
+}
 
+
+// slides
 let slideIndex = 1;
 showSlides(slideIndex);
 

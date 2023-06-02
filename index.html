@@ -34,72 +34,102 @@
 
             <div class="nav-bg displaynone"></div>
             <nav class="displaynone">
-                <button class="menu-close-btn" onclick="toggleMenu()">
-                    <span class="material-symbols-sharp">menu_open</span>
-                </button>
+                <div class="nav-layer nav-layer-1">
+                    <button class="menu-close-btn nav-top-btn" onclick="toggleMenu()">
+                        <span class="material-symbols-sharp">menu_open</span>
+                    </button>
 
-                <a href="#" class="nav-row">
-                    <div class="nav-row-inner">
-                        <span class="material-symbols-sharp">home</span>
-                        <div>回首頁</div>
-                    </div>
-                </a>
-                
-                <a href="#" class="nav-row">
-                    <div class="nav-row-inner">
-                        <span class="material-symbols-sharp">map</span>
-                        <div>網站導覽</div>
-                    </div>
-                </a>
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">home</span>
+                            <div>回首頁</div>
+                        </div>
+                    </a>
 
-                
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">map</span>
+                            <div>網站導覽</div>
+                        </div>
+                    </a>
 
-                
+                    <button class="nav-row" onclick="toggleAccessPopup()">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">settings_accessibility</span>
+                            <div>無障礙功能</div>
+                        </div>
 
-                <div class="nav-2-col">
-                    <button onclick="toggleAccessPopup()">無障礙功能</button> 
-                    <div id="accessibility-popup" class="accessibility-hidden">
-                        <button onclick="toggleAccessPopup()">關閉視窗</button>
-                        <button id="theme-button">主題切換</button>
-                        <button id="font-size-button">字體大小</button>
+                        <!-- 功能列表待完成 -->
+                        <!-- <dialog>
+                            <button onclick="toggleAccessPopup()">hi</button>
+                        </dialog> -->
+                    </button>
 
-                    </div>
-                    <!-- <button id="theme-button">主題切換</button> -->
-                    <button href="#">網站導覽</button>
+                    <button class="nav-row" onclick="goToLayer(2)">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">info</span>
+                            <div>關於學會</div>
+                        </div>
+                        <span class="material-symbols-sharp">arrow_forward</span>
+                    </button>
+
+                    <button class="nav-row">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">event_available</span>
+                            <div>活動公告</div>
+                        </div>
+                        <span class="material-symbols-sharp">arrow_forward</span>
+                    </button>
+
+                    <button class="nav-row">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">import_contacts</span>
+                            <div>學會出版</div>
+                        </div>
+                        <span class="material-symbols-sharp">arrow_forward</span>
+                    </button>
+
+                    <button class="nav-row">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">language</span>
+                            <div>網路資源</div>
+                        </div>
+                        <span class="material-symbols-sharp">arrow_forward</span>
+                    </button>
                 </div>
 
-                <form class="search">
+                <div class="nav-layer nav-layer-2 displaynone">
+                    <button class="layer-back-btn nav-top-btn" onclick="backToMenu()">
+                        <span class="material-symbols-sharp">arrow_back</span>
+                    </button>
+
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">home</span>
+                            <div>回首頁</div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">map</span>
+                            <div>網站導覽</div>
+                        </div>
+                    </a>
+                </div>
+
+                
+
+                <!-- <form class="search">
                     <input class="search-input" type="text" placeholder="搜尋">
 
                     <button>
                         <box-icon name='search'></box-icon>
                     </button>
-                </form>
+                </form> -->
 
-                <div class="nav-1-col">
-                    <button onclick="toggleExtendUl(event)">
-                        <div class="icon-title-container">
-                            關於學會
-                        </div>
-                        <box-icon name='chevron-down'></box-icon>
-                    </button>
-                    
-                    <div class="nav-extend-ul displaynone">
-                        <ul>
-                            <li><a href="#">歷史沿革</a></li>
-                            <li><a href="#">宗旨與任務</a></li>
-                            <li><a href="#">學會章程</a></li>
-                            <li><a href="#">組織職掌</a></li>
-                            <li><a href="#">委員會</a></li>
-                            <li><a href="#">會務規章</a></li>
-                            <li><a href="#">會議記錄</a></li>
-                            <li><a href="#">入會辦法</a></li>
-                            <li><a href="#">我要捐款</a></li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="nav-1-col">
+                <!-- <div class="nav-1-col">
                     <button onclick="toggleExtendUl(event)">
                         <div class="icon-title-container">
                             活動公告
@@ -155,7 +185,7 @@
                             <li><a href="#">圖書資訊相關研究</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </nav>
 
             <!-- <button class="menu-close-btn" onclick="toggleMenu()">

@@ -68,6 +68,15 @@ function goToLayer(layer) {
     
 }
 
+function handleLastMenuItemKeyDown(event) {
+    if (event.key === 'Tab' && !event.shiftKey) {
+        // Prevent the default Tab behavior
+        event.preventDefault();
+        // Focus the first element in the menu
+        document.querySelector('.menu .menu-close-btn').focus();
+    }
+}
+
 
 // slides
 let slideIndex = 1;

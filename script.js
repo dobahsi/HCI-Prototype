@@ -1,11 +1,21 @@
-var nav = document.querySelector('.nav-bg');
-console.log(nav);
+var navBg = document.querySelector('.nav-bg');
+var nav = document.querySelector('nav');
 
 function toggleMenu() {
-    if (nav.classList.contains('displaynone')) {
-        nav.classList.remove('displaynone');
+    if(nav.classList.contains('menu-opened')){
+        nav.classList.remove('menu-opened')
+        navBg.style.opacity = '0'
+        setTimeout(() => {
+            nav.classList.add('displaynone')
+            navBg.classList.add('displaynone')
+        }, 300)
     } else {
-        nav.classList.add('displaynone');
+        nav.classList.remove('displaynone')
+        navBg.classList.remove('displaynone')
+        setTimeout(() => {
+            nav.classList.add('menu-opened')
+            navBg.style.opacity = '0.3'
+        }, 10)
     }
 }
 

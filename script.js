@@ -30,42 +30,66 @@ function toggleAccessPopup() {
 
 var themeButton = document.getElementById("theme-button");
 
-themeButton.addEventListener("click", function() {
-    var root = document.documentElement;
+// themeButton.addEventListener("click", function() {
+//     var root = document.documentElement;
 
-    if (root.classList.contains("theme-dark")) {
-        root.classList.remove("theme-dark");
-    } else {
-        root.classList.add("theme-dark");
-    }
-});
+//     if (root.classList.contains("theme-dark")) {
+//         root.classList.remove("theme-dark");
+//     } else {
+//         root.classList.add("theme-dark");
+//     }
+// });
 
-var fontSizeButton = document.getElementById("font-size-button");
+// var fontSizeButton = document.getElementById("font-size-button");
 
-fontSizeButton.addEventListener("click", function() {
-    var root = document.documentElement;
+// fontSizeButton.addEventListener("click", function() {
+//     var root = document.documentElement;
 
-    if (root.classList.contains("font-size-small")) {
-        root.classList.remove("font-size-small");
-        root.classList.add("font-size-large");
-    } else if (root.classList.contains("font-size-large")) {
-        root.classList.remove("font-size-large");
-    } else {
-        root.classList.add("font-size-small");
-    }
-});
+//     if (root.classList.contains("font-size-small")) {
+//         root.classList.remove("font-size-small");
+//         root.classList.add("font-size-large");
+//     } else if (root.classList.contains("font-size-large")) {
+//         root.classList.remove("font-size-large");
+//     } else {
+//         root.classList.add("font-size-small");
+//     }
+// });
+var translatePercentage = 20;
 
 function goToLayer(layer) {
     var mainWindow = document.querySelector('.nav-layer-1');
     var layerWindow = document.querySelector(`.nav-layer-${layer}`);
-    console.log(layerWindow);
-    mainWindow.classList.toggle('nav-layer-exit');
-    layerWindow.classList.toggle('displaynone');
+
+    layerWindow.classList.remove('displaynone');
+
     setTimeout(() => {
-        
-        layerWindow.classList.toggle('nav-layer-exit');
+        mainWindow.style.transform = `translateX(-${translatePercentage}%)`;
+        mainWindow.style.opacity = '0';
     }, 10);
     
+    setTimeout(() => {
+        layerWindow.style.transform = 'translateX(0)';
+        layerWindow.style.opacity = '1';
+        mainWindow.classList.add('displaynone');
+    }, 100);
+}
+
+function backToFirstLayer(layer) {
+    var mainWindow = document.querySelector('.nav-layer-1');
+    var layerWindow = document.querySelector(`.nav-layer-${layer}`);
+
+    mainWindow.classList.remove('displaynone');
+
+    setTimeout(() => {
+        layerWindow.style.transform = `translateX(${translatePercentage}%)`;
+        layerWindow.style.opacity = '0';
+    }, 10);
+    
+    setTimeout(() => {
+        mainWindow.style.transform = 'translateX(0)';
+        mainWindow.style.opacity = '1';
+        layerWindow.classList.add('displaynone');
+    }, 100);
 }
 
 function handleLastMenuItemKeyDown(event) {

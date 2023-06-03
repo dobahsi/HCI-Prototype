@@ -11,8 +11,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,500,0,0" />
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
 
+
+
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <!-- swipper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
@@ -86,7 +91,7 @@
 
                     <button class="nav-row" onclick="goToLayer(5)">
                         <div class="nav-row-inner">
-                            <span class="material-symbols-sharp">import_contacts</span>
+                            <span class="material-symbols-sharp">article</span>
                             <div>學會出版</div>
                         </div>
                         <span class="material-symbols-sharp">arrow_forward</span>
@@ -101,6 +106,19 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
+                    <button class="nav-row">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">account_circle</span>
+                            <div>會員登入</div>
+                        </div>
+                    </button>
+
+                    <button class="nav-row" onclick="changeTheme()">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">dark_mode</span>
+                            <div>切換暗黑模式</div>
+                        </div>
+                    </button>
                 </div>
                 
                 
@@ -139,6 +157,13 @@
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">format_letter_spacing</span>
                             <div class="nav-row-inner-text">字體間距</div>
+                        </div>
+                    </button>
+    
+                    <button class="nav-row animation-btn" onclick="changeAnimation()">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">animation</span>
+                            <div class="nav-row-inner-text">關閉動畫</div>
                         </div>
                     </button>
     
@@ -323,180 +348,92 @@
                     </a>
                     <!-- 把"圖書資訊"刪除 -->
                 </div>
-
-                
-
-                <!-- <form class="search">
-                    <input class="search-input" type="text" placeholder="搜尋">
-
-                    <button>
-                        <box-icon name='search'></box-icon>
-                    </button>
-                </form> -->
-
-
-                <!-- <div class="nav-1-col">
-                    <button onclick="toggleExtendUl(event)">
-                        <div class="icon-title-container">
-                            活動公告
-                        </div>
-                        <box-icon name='chevron-down'></box-icon>
-                    </button>
-
-                    <div class="nav-extend-ul displaynone">
-                        <ul>
-                            <li><a href="#">學會公告</a></li>
-                            <li><a href="#">活動訊息</a></li>
-                            <li><a href="#">教育資源</a></li>
-                            <li><a href="#">會務報導</a></li>
-                            <li><a href="#">求才求職</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="nav-1-col">
-                    <button onclick="toggleExtendUl(event)">
-                        <div class="icon-title-container">
-                            學會出版
-                        </div>
-                        <box-icon name='chevron-down'></box-icon>
-                    </button>
-                    
-                    <div class="nav-extend-ul displaynone">
-                        <ul>
-                            <li><a href="#">圖書資訊學研究</a></li>
-                            <li><a href="#">圖書資訊學期刊資料庫(CLISA)</a></li>
-                            <li><a href="#">典藏學會</a></li>
-                            <li><a href="#">紙本出版作品</a></li>
-                            <li><a href="#">電子報</a></li>
-                            <li><a href="#">訂閱電子報</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="nav-1-col">
-                    <button onclick="toggleExtendUl(event)">
-                        <div class="icon-title-container">
-                            網路資源
-                        </div>
-                        <box-icon name='chevron-down'></box-icon>
-                    </button>
-                    
-                    <div class="nav-extend-ul displaynone">
-                        <ul>
-                            <li><a href="#">圖資法規</a></li>
-                            <li><a href="#">圖書資訊相關系所</a></li>
-                            <li><a href="#">國內外圖書館</a></li>
-                            <li><a href="#">圖書資訊相關學會</a></li>
-                            <li><a href="#">圖書資訊相關研究</a></li>
-                        </ul>
-                    </div>
-                </div> -->
             </nav>
-
-            <!-- <button class="menu-close-btn" onclick="toggleMenu()">
-                <box-icon name='chevron-left'></box-icon>
-            </button> -->
-            
         </div>
         
         <a href="#" class="logo">
             <img src="./assets/logo-LAROC.png" alt="logo">
-            中華民國圖書館學會
+            <h1>中華民國圖書館學會</h1>
         </a>
 
-        <button class="header-btn">
+        <!-- <button class="header-btn">
             <span class="material-symbols-sharp">search</span>
-        </button>
+        </button> -->
     </header>
 
-    <main>
-        <div class="slideshow-container">
-
-            <!-- Full-width images with number and caption text -->
-            <div class="mySlides fade">
-              <!-- <div class="numbertext">1 / 3</div> -->
-              <div class="slide-content">
-                <img src="./assets/slide-1.png" style="width:100%">
+    <!-- <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./assets/slide-1.png">
                 <div class="text">Caption Text</div>
-              </div>
             </div>
-          
-            <div class="mySlides fade">
-              <!-- <div class="numbertext">2 / 3</div> -->
-              <div class="slide-content">
-                <img src="./assets/slide-2.png" style="width:100%">
+            <div class="swiper-slide">
+                <img src="./assets/slide-1.png">
                 <div class="text">Caption Two</div>
-              </div>
             </div>
-          
-            <div class="mySlides fade">
-              <!-- <div class="numbertext">3 / 3</div> -->
-              <div class="slide-content">
-                <img src="./assets/slide-3.png" style="width:100%">
+            <div class="swiper-slide">
+                <img src="./assets/slide-1.png">
                 <div class="text">Caption Three</div>
-              </div>
             </div>
-          
-            <!-- Next and previous buttons -->
-            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-          </div>
-          <br>
-          
-          <!-- The dots/circles -->
-          <div class="dot-container" style="text-align:center">
-            <span tabindex="0" class="dot" onclick="currentSlide(1)"></span>
-            <span tabindex="0" class="dot" onclick="currentSlide(2)"></span>
-            <span tabindex="0" class="dot" onclick="currentSlide(3)"></span>
-          </div>
         </div>
-          
-        <div class="announcement">
-            <section>
-                <a href="#">
-                    <h2>
-                        學會<br/>公告
-                    </h2>
-                </a>
 
-                <a href="#" content="1">
-                    <span>2023 / 04 / 27</span>
-                    <p>
-                        中華民國圖書館學會組團參加 2023 ALA 年會會
-                    </p>
-                </a>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
 
-                <a href="#" content="2">
-                    <span>2022 / 10 / 22</span>
-                    <p>
-                        111 年資訊組織分析師認證考試報名繳費
-                    </p>
-                </a>
-            </section>
+        <div class="swiper-pagination"></div>
+    </div> -->
 
-            <section>
-                <a href="#">
-                    <h2>
-                        活動<br/>訊息
-                    </h2>
-                </a>
+    <img src="./assets/slide-1.png" class="slider">
 
-                <a href="#" content="1">
-                    <span>2023 / 04 / 27</span>
-                    <p>
-                        歡迎申請國立公共資訊圖書館 112 年度獎助博碩士圖書資訊學位論文
-                    </p>
+    <main>
+        <section>
+            <div>
+                <h2>最新公告</h2>
+                <a href="#" class="section-more" aria-label="更多">
+                    <div>更多</div>
                 </a>
+            </div>
+            
+            <a href="#" content="1">
+                <span>2023 / 04 / 27</span>
+                <p>
+                    中華民國圖書館學會組團參加 2023 ALA 年會會
+                </p>
+            </a>
 
-                <a href="#" content="2">
-                    <span>2023 / 03 / 22</span>
-                    <p>
-                        112年度「提升圖書館員身心障礙服務專業知能」線上專題課程，歡迎踴躍報名參加！
-                    </p>
+            <a href="#" content="2">
+                <span>2022 / 10 / 22</span>
+                <p>
+                    111 年資訊組織分析師認證考試報名繳費
+                </p>
+            </a>
+        </section>
+
+        <section>
+            <div>
+                <h2>最新活動</h2>
+                <a href="#" class="section-more" aria-label="更多">
+                    <div>更多</div>
                 </a>
-            </section>
-        </div>
+            </div>
+            
+            <a href="#" content="1">
+                <span>2023 / 04 / 27</span>
+                <p>
+                    歡迎申請國立公共資訊圖書館 112 年度獎助博碩士圖書資訊學位論文
+                </p>
+            </a>
+
+            <a href="#" content="2">
+                <span>2023 / 03 / 22</span>
+                <p>
+                    112年度「提升圖書館員身心障礙服務專業知能」線上專題課程，歡迎踴躍報名參加！
+                </p>
+            </a>
+        </section>
+
+
+
 
         <div class="main-nav">
             <a href="#">
@@ -536,8 +473,11 @@
     </footer>
 
 </body>
+<!-- swipper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script type="text/javascript" src="./script.js"></script>
-<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+
 
 </html>

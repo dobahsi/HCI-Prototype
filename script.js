@@ -18,7 +18,7 @@ function toggleMenu() {
         }, 10)
     }
 }
-toggleMenu()
+// toggleMenu()
 
 var translatePercentage = 20;
 
@@ -144,6 +144,9 @@ function changeContrast() {
 
 }
 
+function changeAnimation() {
+}
+
 function changeReset() {
     root.style.fontSize = '100%';
     root.style.setProperty('--font-weight', '400');
@@ -162,36 +165,34 @@ function changeReset() {
 }
 
 
+function changeTheme() {
+    if (root.classList.contains('dark-theme-palette')) {
+        root.classList.remove('dark-theme-palette')
+    } else {
+        root.classList.add('dark-theme-palette')
+    }
+}
 
 
+const swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
 
 
-var themeButton = document.getElementById("theme-button");
-
-// themeButton.addEventListener("click", function() {
-//     var root = document.documentElement;
-
-//     if (root.classList.contains("theme-dark")) {
-//         root.classList.remove("theme-dark");
-//     } else {
-//         root.classList.add("theme-dark");
-//     }
-// });
-
-// var fontSizeButton = document.getElementById("font-size-button");
-
-// fontSizeButton.addEventListener("click", function() {
-//     var root = document.documentElement;
-
-//     if (root.classList.contains("font-size-small")) {
-//         root.classList.remove("font-size-small");
-//         root.classList.add("font-size-large");
-//     } else if (root.classList.contains("font-size-large")) {
-//         root.classList.remove("font-size-large");
-//     } else {
-//         root.classList.add("font-size-small");
-//     }
-// });
 
 
 function handleLastMenuItemKeyDown(event) {

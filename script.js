@@ -18,7 +18,7 @@ function toggleMenu() {
         }, 10)
     }
 }
-
+toggleMenu()
 
 var translatePercentage = 20;
 
@@ -39,6 +39,7 @@ function goToLayer(layer) {
         mainWindow.classList.add('displaynone');
     }, 100);
 }
+// goToLayer(2)
 
 
 function backToFirstLayer(layer) {
@@ -61,19 +62,21 @@ function backToFirstLayer(layer) {
 
 // accessibility settings
 // var rootElement = document.documentElement;
-var allElements = document.querySelector('*');
-
-var fontSizeStep = 0, letterSpacingStep = 0;
+var root = document.documentElement;
+var allButtons = document.querySelectorAll('button');
+var fontSizeStep = 0, fontWeightStep = 0, letterSpacingStep = 0;
 
 function changeFontSize() {
     fontSizeStep++;
     var step = fontSizeStep % 3;
     if (step === 0) {
-        allElements.style.fontSize = '100%';
+        root.style.fontSize = '100%';
     } else if (step === 1) {
-        allElements.style.fontSize = '125%';
+        root.style.fontSize = '112.5%';
     } else if (step === 2) {
-        allElements.style.fontSize = '87.5%';
+        root.style.fontSize = '125%';
+    } else if (step === 3) {
+        root.style.fontSize = '87.5%';
     }
     var btnInnerText = document.querySelector(".font-size-btn").querySelector(".nav-row-inner-text");
     if (step === 0) {
@@ -81,20 +84,51 @@ function changeFontSize() {
     } else if (step === 1) {
         btnInnerText.innerText = `字體大小 (大)`;
     } else if (step === 2) {
+        btnInnerText.innerText = `字體大小 (更大)`;
+    } else if (step === 3) {
         btnInnerText.innerText = `字體大小 (小)`;
     }
 }
 
+function changeFontWeight() {
+    fontWeightStep++;
+    var step = fontWeightStep % 3;
+    if (step === 0) {
+        root.style.setProperty('--font-weight', '400');
+        root.style.setProperty('--font-weight-bold', '600');
+    } else if (step === 1) {
+        root.style.setProperty('--font-weight', '500');
+        root.style.setProperty('--font-weight-bold', '700');
+    } else if (step === 2) {
+        root.style.setProperty('--font-weight', '600');
+        root.style.setProperty('--font-weight-bold', '700');
+    }
+    var btnInnerText = document.querySelector(".font-weight-btn").querySelector(".nav-row-inner-text");
+    if (step === 0) {
+        btnInnerText.innerText = `字體粗細`;
+    } else if (step === 1) {
+        btnInnerText.innerText = `字體粗細 (粗)`;
+    } else if (step === 2) {
+        btnInnerText.innerText = `字體粗細 (更粗)`;
+    }
+}
+
+
 function changeLetterSpacing() {
     letterSpacingStep++;
     var step = letterSpacingStep % 3;
+    var spacing = 'normal';
     if (step === 0) {
-        allElements.style.letterSpacing = 'normal';
+        spacing = 'normal';
     } else if (step === 1) {
-        allElements.style.letterSpacing = '0.3em';
+        spacing = '0.3em';
     } else if (step === 2) {
-        allElements.style.letterSpacing = '0.5em';
+        spacing = '0.5em';
     }
+
+    root.style.letterSpacing = spacing;
+    allButtons.forEach(button => {button.style.letterSpacing = spacing;});
+
     var btnInnerText = document.querySelector(".letter-spacing-btn").querySelector(".nav-row-inner-text");
     if (step === 0) {
         btnInnerText.innerText = `字體間距`;
@@ -111,12 +145,18 @@ function changeContrast() {
 }
 
 function changeReset() {
-    allElements.style.fontSize = '100%';
-    allElements.style.letterSpacing = 'normal';
+    root.style.fontSize = '100%';
+    root.style.setProperty('--font-weight', '400');
+    root.style.setProperty('--font-weight-bold', '600');
+    root.style.letterSpacing = 'normal';
+    allButtons.forEach(button => {button.style.letterSpacing = 'normal';});
     fontSizeStep = 0;
+    fontWeightStep = 0;
     letterSpacingStep = 0;
     var btnInnerText = document.querySelector(".font-size-btn").querySelector(".nav-row-inner-text");
     btnInnerText.innerText = `字體大小`;
+    var btnInnerText = document.querySelector(".font-weight-btn").querySelector(".nav-row-inner-text");
+    btnInnerText.innerText = `字體粗細`;
     var btnInnerText = document.querySelector(".letter-spacing-btn").querySelector(".nav-row-inner-text");
     btnInnerText.innerText = `字體間距`;
 }

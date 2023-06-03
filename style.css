@@ -8,6 +8,8 @@
 /* general */
 * {
     font-family: 'Noto Sans TC', sans-serif;
+    text-align: left;
+    transition: outline 0.1s;
 }
 
 .font-size-small {
@@ -19,7 +21,7 @@
 }
 
 *:focus {
-    outline: solid 3px var(--focus-color);
+    outline: solid 3px var(--focus-color) !important;
 }
 
 .displaynone {
@@ -83,7 +85,8 @@ a[target="_blank"]:after {
 
     --focus-color: #ff0000;
 
-    --transition-color: 0.5s;
+    --font-weight: 400;
+    --font-weight-bold: 600;
 }
 
 /* 即將更改的色票 */
@@ -176,7 +179,7 @@ header {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: var(--font-weight);
     color: var(--on-primary);
 
     display: flex;
@@ -200,13 +203,11 @@ header {
 
 nav {
     --nav-width: 22rem;
-    --nav-btn-height: 3rem;
+    --nav-btn-height: 3.5rem;
     --nav-border-radius: calc(var(--nav-btn-height) / 2);
 
-
     --nav-font-size: 1.5rem;
-    --nav-font-weight: 500;
-    --nav-btn-gap: 1rem;
+    --nav-font-weight: 400;
 
     position: fixed;
     inset: 0 calc(100% - var(--nav-width)) 0 0;
@@ -216,18 +217,13 @@ nav {
     overflow-y: auto;
     border-radius: 0 1rem 1rem 0;
     font-size: var(--nav-font-size);
-    font-weight: var(--nav-font-weight);
+    font-weight: var(--font-weight);
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-
-    /* display: grid; */
-    /* gap: var(--nav-btn-gap); */
-    /* align-items: start; */
-    /* justify-content: center; */
 }
 
 nav > * > *:not(:first-child) {
-    margin-block-start: 1rem;
+    margin-block-start: 0.5rem;
 }
 
 .menu-opened {
@@ -238,7 +234,6 @@ nav > * > *:not(:first-child) {
 .nav-top-btn {
     width: var(--header-btn-height);
     height: var(--header-btn-height);
-    background-color: transparent;
     border-radius: 50%;
     margin: 0 0 1rem calc(var(--header-padding-horizontal) / 2);
 
@@ -261,48 +256,40 @@ nav > * > *:not(:first-child) {
     /* font-weight: 400; */
 }
 
-
-/* 
-.search {
-    width: 100%;
-    height: var(--nav-btn-height);
-    font-size:1.5rem;
-    background-color: var(--secondary-bg-color);
-    border-radius: var(--nav-border-radius);
-
-    display: grid;
-    grid-template-columns: 1fr 3rem;
-    grid-template-rows: 1fr;
-    grid-template-areas: "search icon";
-}
-
-.search-input {
-    grid-area: search;
-    min-width: 0;
+.search-bar {
+    --search-bar-height: 3rem;
     padding: 0 1rem;
-    border: none;
-    background-color: transparent;    
+    display: flex;
+    align-items: center;
 }
 
-.search-input::placeholder {
-    color: var(--secondary-color); 
-}
-
-
-.search button {
-    grid-area: icon;
-    background-color: transparent;
+.search-bar > button {
+    position: absolute;
+    /* margin-left: 1rem; */
+    right: 1rem;
+    font-size: var(--header-btn-icon-size);
+    width: var(--search-bar-height);
+    height: var(--search-bar-height);
+    border-radius: 1px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.search button > box-icon {
-    height: 2rem;
-    width: 2rem;
-    fill: var(--primary-color);
-} */
+.search-bar > input {
+    /* padding-left: 4rem; */
+    /* background-color: var(--primary-container); */
+    padding: 0 0.7rem;
+    height: var(--search-bar-height);
+    background-color: transparent;
+    outline: 1.5px solid var(--outline);
+    border-radius: 3px;
+}
+
+.search-bar > input::placeholder {
+    /* color: var(--on-primary-container); */
+}
 
 .nav-row {
     width: 100%;
@@ -351,14 +338,11 @@ nav > * > *:not(:first-child) {
     opacity: 0;
 }
 
-.nav-layer-inner > .nav-row + * {
+.nav-layer-inner > .nav-row:not(:first-child) {
     width: calc(100% - var(--nav-btn-height));
     margin-left: var(--nav-btn-height);
 }
 
-.letter-spacing-big {
-    letter-spacing: 0.5em !important;
-}
 
 
 /* main */
@@ -550,7 +534,7 @@ section p {
     /* white-space: nowrap;
     text-overflow: ellipsis; */
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: var(--font-weight);
     
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -560,7 +544,8 @@ section p {
 
 section span {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: var(--font-weight);
+
 }
 
 .main-nav {
@@ -588,7 +573,7 @@ section span {
 
     color: var(--primary-color);
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: var(--font-weight);
 
 
     display: flex;
@@ -621,7 +606,8 @@ footer {
 
 .footer-header {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
+
 }
 
 footer ul {

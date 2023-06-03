@@ -32,7 +32,7 @@
                 <span class="material-symbols-sharp">menu</span>
             </button>
 
-            <div class="nav-bg displaynone"></div>
+            <div class="nav-bg displaynone" onclick="toggleMenu()"></div>
             <nav class="displaynone">
                 <button class="menu-close-btn nav-top-btn" onclick="toggleMenu()">
                     <span class="material-symbols-sharp">menu_open</span>
@@ -55,19 +55,15 @@
                         </div>
                     </a>
 
-                    <button class="nav-row" onclick="toggleAccessPopup()">
+                    <button class="nav-row" onclick="goToLayer(2)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">settings_accessibility</span>
-                            <div>無障礙功能</div>
+                            <div>無障礙設定</div>
                         </div>
-
-                        <!-- 功能列表待完成 -->
-                        <!-- <dialog>
-                            <button onclick="toggleAccessPopup()">hi</button>
-                        </dialog> -->
+                        <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button class="nav-row" onclick="goToLayer(2)">
+                    <button class="nav-row" onclick="goToLayer(3)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">info</span>
                             <div>關於學會</div>
@@ -75,7 +71,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button class="nav-row" onclick="goToLayer(3)">
+                    <button class="nav-row" onclick="goToLayer(4)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">event_available</span>
                             <div>活動公告</div>
@@ -83,7 +79,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button class="nav-row" onclick="goToLayer(4)">
+                    <button class="nav-row" onclick="goToLayer(5)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">import_contacts</span>
                             <div>學會出版</div>
@@ -91,7 +87,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button class="nav-row" onclick="goToLayer(5)" onkeydown="handleLastMenuItemKeyDown(event)"> 
+                    <button class="nav-row" onclick="goToLayer(6)" onkeydown="handleLastMenuItemKeyDown(event)"> 
                         <!-- onkeydown="handleLastMenuItemKeyDown(event)"要改到之後裡面的最後一個按鈕 -->
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">language</span>
@@ -101,12 +97,47 @@
                     </button>
                 </div>
 
+                <!-- 無障礙設定 -->
                 <div class="nav-layer-inner nav-layer-2 displaynone">
-                    <!-- <button class="layer-back-btn nav-top-btn">
-                        <span class="material-symbols-sharp">arrow_back</span>
-                    </button> -->
-
                     <button class="nav-row" onclick="backToFirstLayer(2)">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">arrow_back</span>
+                            <div>回導覽列</div>
+                        </div>
+                    </button>
+
+                    <button class="nav-row" onclick="">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">contrast</span>
+                            <div>調整對比</div>
+                        </div>
+                    </button>
+
+                    <button class="nav-row font-size-btn" onclick="changeFontSize()">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">text_increase</span>
+                            <div class="nav-row-inner-text">字體大小</div>
+                        </div>
+                    </button>
+    
+                    <button class="nav-row letter-spacing-btn" onclick="changeLetterSpacing()">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">format_letter_spacing</span>
+                            <div class="nav-row-inner-text">字體間距</div>
+                        </div>
+                    </button>
+    
+                    <button class="nav-row" onclick="changeReset()">
+                        <div class="nav-row-inner">
+                            <span class="material-symbols-sharp">replay</span>
+                            <div>重置設定</div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- 關於學會 -->
+                <div class="nav-layer-inner nav-layer-3 displaynone">
+                    <button class="nav-row" onclick="backToFirstLayer(3)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">arrow_back</span>
                             <div>回導覽列</div>
@@ -115,23 +146,62 @@
 
                     <a href="#" class="nav-row">
                         <div class="nav-row-inner">
-                            <div>回首頁</div>
+                            <div>歷史沿革</div>
                         </div>
                     </a>
     
                     <a href="#" class="nav-row">
                         <div class="nav-row-inner">
-                            <div>網站導覽</div>
+                            <div>宗旨與任務</div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <div>學會簡章</div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <div>組織職掌</div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <div>委員會</div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <div>會務規章</div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <div>會議記錄</div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <div>入會辦法</div>
+                        </div>
+                    </a>
+    
+                    <a href="#" class="nav-row">
+                        <div class="nav-row-inner">
+                            <div>我要捐款</div>
                         </div>
                     </a>
                 </div>
 
-                <div class="nav-layer-inner nav-layer-3 displaynone">
-                    <!-- <button class="layer-back-btn nav-top-btn">
-                        <span class="material-symbols-sharp">arrow_back</span>
-                    </button> -->
-
-                    <button class="nav-row" onclick="backToFirstLayer(3)">
+                <!-- 活動公告 -->
+                <div class="nav-layer-inner nav-layer-4 displaynone">
+                    <button class="nav-row" onclick="backToFirstLayer(4)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">arrow_back</span>
                             <div>回導覽列</div>
@@ -157,12 +227,9 @@
                     </a>
                 </div>
 
-                <div class="nav-layer-inner nav-layer-4 displaynone">
-                    <!-- <button class="layer-back-btn nav-top-btn">
-                        <span class="material-symbols-sharp">arrow_back</span>
-                    </button> -->
-
-                    <button class="nav-row" onclick="backToFirstLayer(4)">
+                <!-- 學會出版 -->
+                <div class="nav-layer-inner nav-layer-5 displaynone">
+                    <button class="nav-row" onclick="backToFirstLayer(5)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">arrow_back</span>
                             <div>回導覽列</div>
@@ -201,12 +268,9 @@
                     <!-- 我把訂閱電子報拿掉了 -->
                 </div>
 
-                <div class="nav-layer-inner nav-layer-5 displaynone">
-                    <!-- <button class="layer-back-btn nav-top-btn">
-                        <span class="material-symbols-sharp">arrow_back</span>
-                    </button> -->
-
-                    <button class="nav-row" onclick="backToFirstLayer(5)">
+                <!-- 網路資源 -->
+                <div class="nav-layer-inner nav-layer-6 displaynone">
+                    <button class="nav-row" onclick="backToFirstLayer(6)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">arrow_back</span>
                             <div>回導覽列</div>

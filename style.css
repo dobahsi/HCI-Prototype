@@ -262,6 +262,7 @@ nav > * > *:not(:first-child) {
 }
 
 
+/* 
 .search {
     width: 100%;
     height: var(--nav-btn-height);
@@ -284,7 +285,7 @@ nav > * > *:not(:first-child) {
 }
 
 .search-input::placeholder {
-    color: var(--secondary-color); /* 5.15 vs #dddddd */
+    color: var(--secondary-color); 
 }
 
 
@@ -301,7 +302,7 @@ nav > * > *:not(:first-child) {
     height: 2rem;
     width: 2rem;
     fill: var(--primary-color);
-}
+} */
 
 .nav-row {
     width: 100%;
@@ -355,7 +356,9 @@ nav > * > *:not(:first-child) {
     margin-left: var(--nav-btn-height);
 }
 
-
+.letter-spacing-big {
+    letter-spacing: 0.5em !important;
+}
 
 
 /* main */

@@ -18,7 +18,6 @@ function toggleMenu() {
         }, 10)
     }
 }
-toggleMenu()
 
 
 var translatePercentage = 20;
@@ -40,7 +39,7 @@ function goToLayer(layer) {
         mainWindow.classList.add('displaynone');
     }, 100);
 }
-goToLayer(2)
+
 
 function backToFirstLayer(layer) {
     var mainWindow = document.querySelector('.nav-layer-1');

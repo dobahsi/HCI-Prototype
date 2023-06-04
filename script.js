@@ -38,13 +38,13 @@ function toggleMenu(e) {
 var translatePercentage = 20;
 var mainWindow = document.querySelector('.nav-layer-1');
 
-function goToLayer(layer) {
+function goToLayer(e, layer) {
     console.log('go');
     var layerWindow = document.querySelector(`.nav-layer-${layer}`);
     var layerBtn = layerWindow.children[0];
 
     layerWindow.classList.remove('display-none');
-    layerBtn.focus();
+    if (e.pointerId === -1) {layerBtn.focus()};
 
     setTimeout(() => {
         mainWindow.style.transform = `translateX(-${translatePercentage}%)`;
@@ -62,11 +62,11 @@ function goToLayer(layer) {
 // goToLayer(2)
 
 
-function backToFirstLayer(layer) {
-    console.log('back');
+function backToFirstLayer(e, layer) {
+    console.log(e);
     var mainWindow = document.querySelector('.nav-layer-1');
     var layerWindow = document.querySelector(`.nav-layer-${layer}`);
-    var mainWindowLayerBtn = document.querySelector(`[onclick="goToLayer(${layer})"]`);
+    var mainWindowLayerBtn = document.querySelector(`[onclick="goToLayer(event, ${layer})"]`);
 
     mainWindow.classList.remove('display-none');
 
@@ -81,7 +81,7 @@ function backToFirstLayer(layer) {
         layerWindow.classList.add('display-none');
     }, 100);
 
-    mainWindowLayerBtn.focus();
+    if (e.pointerId === -1) {mainWindowLayerBtn.focus()};
 }
 
 

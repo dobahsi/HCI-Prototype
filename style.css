@@ -24,8 +24,12 @@
     outline: solid 3px var(--focus-color) !important;
 }
 
-.displaynone {
+.display-none {
     display: none !important;
+}
+
+.transition-none {
+    transition: none !important;
 }
 
 .rotate180 {
@@ -60,15 +64,15 @@ a[target="_blank"]:after {
 
 /* css start */
 :root {
-    --primary: #aa3248;
+    --primary: #9a253d;
     --on-primary: #ffffff;
     --primary-container: #ffdadc;
     --on-primary-container: #40000f;
-    --secondary: #765659;
+    --secondary: #694a4d;
     --on-secondary: #ffffff;
     --secondary-container: #ffdadc;
     --on-secondary-container: #2c1517;
-    --tertiary: #775930;
+    --tertiary: #595051;
     --on-tertiary: #ffffff;
     --tertiary-container: #ffddb5;
     --on-tertiary-container: #2a1800;
@@ -77,7 +81,7 @@ a[target="_blank"]:after {
 
     --outline: #857374;
     --surface-variant: #f4ddde;
-    --on-surface-variant: #524344;
+    --on-surface-variant: #463839;
 
     --content-width: clamp(240px, 100%, 60rem);
 
@@ -105,10 +109,34 @@ a[target="_blank"]:after {
     --on-background: #ece0df;
 
     --outline: #9f8c8d;
-    --surface-variant: #524344;
-    --on-surface-variant: #d7c1c2;
+    --surface-variant: #463839;
+    --on-surface-variant: #f4ddde;
 
     --focus-color: #ffb4ab;
+
+}
+
+.mono-theme-palette{
+    --primary: #595051;
+    --on-primary: #ffffff;
+    --primary-container: #201a1a;
+    --on-primary-container: #ece0df;
+    --secondary: #595051;
+    --on-secondary: #ffffff;
+    --secondary-container: #201a1a;
+    --on-secondary-container: #ece0df;
+    --tertiary: #595051;
+    --on-tertiary: #ffffff;
+    --tertiary-container: #201a1a;
+    --on-tertiary-container: #ece0df;
+    --background: #000000;
+    --on-background: #ece0df;
+
+    --outline: #998e8e;
+    --surface-variant: #362f2f;
+    --on-surface-variant: #d0c4c4;
+
+    --focus-color: #d0c4c4;
 
 }
 

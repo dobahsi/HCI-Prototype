@@ -6,12 +6,12 @@ function toggleMenu() {
         nav.classList.remove('menu-opened')
         navBg.style.opacity = '0'
         setTimeout(() => {
-            nav.classList.add('displaynone')
-            navBg.classList.add('displaynone')
+            nav.classList.add('display-none')
+            navBg.classList.add('display-none')
         }, 300)
     } else {
-        nav.classList.remove('displaynone')
-        navBg.classList.remove('displaynone')
+        nav.classList.remove('display-none')
+        navBg.classList.remove('display-none')
         setTimeout(() => {
             nav.classList.add('menu-opened')
             navBg.style.opacity = '0.3'
@@ -26,7 +26,7 @@ function goToLayer(layer) {
     var mainWindow = document.querySelector('.nav-layer-1');
     var layerWindow = document.querySelector(`.nav-layer-${layer}`);
 
-    layerWindow.classList.remove('displaynone');
+    layerWindow.classList.remove('display-none');
 
     setTimeout(() => {
         mainWindow.style.transform = `translateX(-${translatePercentage}%)`;
@@ -36,7 +36,7 @@ function goToLayer(layer) {
     setTimeout(() => {
         layerWindow.style.transform = 'translateX(0)';
         layerWindow.style.opacity = '1';
-        mainWindow.classList.add('displaynone');
+        mainWindow.classList.add('display-none');
     }, 100);
 }
 // goToLayer(2)
@@ -46,7 +46,7 @@ function backToFirstLayer(layer) {
     var mainWindow = document.querySelector('.nav-layer-1');
     var layerWindow = document.querySelector(`.nav-layer-${layer}`);
 
-    mainWindow.classList.remove('displaynone');
+    mainWindow.classList.remove('display-none');
 
     setTimeout(() => {
         layerWindow.style.transform = `translateX(${translatePercentage}%)`;
@@ -56,36 +56,32 @@ function backToFirstLayer(layer) {
     setTimeout(() => {
         mainWindow.style.transform = 'translateX(0)';
         mainWindow.style.opacity = '1';
-        layerWindow.classList.add('displaynone');
+        layerWindow.classList.add('display-none');
     }, 100);
 }
 
 // accessibility settings
-// var rootElement = document.documentElement;
+var allElements = document.querySelectorAll('*');
 var root = document.documentElement;
 var allButtons = document.querySelectorAll('button');
-var fontSizeStep = 0, fontWeightStep = 0, letterSpacingStep = 0;
+var fontSizeStep = 0, fontWeightStep = 0, letterSpacingStep = 0, contrastStep = 0, animationStep = 0;
 
 function changeFontSize() {
     fontSizeStep++;
     var step = fontSizeStep % 3;
+    var btnInnerText = document.querySelector(".font-size-btn").querySelector(".nav-row-inner-text");
+
     if (step === 0) {
         root.style.fontSize = '100%';
-    } else if (step === 1) {
-        root.style.fontSize = '112.5%';
-    } else if (step === 2) {
-        root.style.fontSize = '125%';
-    } else if (step === 3) {
-        root.style.fontSize = '87.5%';
-    }
-    var btnInnerText = document.querySelector(".font-size-btn").querySelector(".nav-row-inner-text");
-    if (step === 0) {
         btnInnerText.innerText = `字體大小`;
     } else if (step === 1) {
+        root.style.fontSize = '112.5%';
         btnInnerText.innerText = `字體大小 (大)`;
     } else if (step === 2) {
+        root.style.fontSize = '125%';
         btnInnerText.innerText = `字體大小 (更大)`;
     } else if (step === 3) {
+        root.style.fontSize = '87.5%';
         btnInnerText.innerText = `字體大小 (小)`;
     }
 }
@@ -93,22 +89,19 @@ function changeFontSize() {
 function changeFontWeight() {
     fontWeightStep++;
     var step = fontWeightStep % 3;
+    var btnInnerText = document.querySelector(".font-weight-btn").querySelector(".nav-row-inner-text");
+
     if (step === 0) {
         root.style.setProperty('--font-weight', '400');
         root.style.setProperty('--font-weight-bold', '600');
+        btnInnerText.innerText = `字體粗細`;
     } else if (step === 1) {
         root.style.setProperty('--font-weight', '500');
         root.style.setProperty('--font-weight-bold', '700');
+        btnInnerText.innerText = `字體粗細 (粗)`;
     } else if (step === 2) {
         root.style.setProperty('--font-weight', '600');
         root.style.setProperty('--font-weight-bold', '700');
-    }
-    var btnInnerText = document.querySelector(".font-weight-btn").querySelector(".nav-row-inner-text");
-    if (step === 0) {
-        btnInnerText.innerText = `字體粗細`;
-    } else if (step === 1) {
-        btnInnerText.innerText = `字體粗細 (粗)`;
-    } else if (step === 2) {
         btnInnerText.innerText = `字體粗細 (更粗)`;
     }
 }
@@ -118,33 +111,44 @@ function changeLetterSpacing() {
     letterSpacingStep++;
     var step = letterSpacingStep % 3;
     var spacing = 'normal';
+    var btnInnerText = document.querySelector(".letter-spacing-btn").querySelector(".nav-row-inner-text");
+
     if (step === 0) {
         spacing = 'normal';
+        btnInnerText.innerText = `字體間距`;
     } else if (step === 1) {
         spacing = '0.3em';
+        btnInnerText.innerText = `字體間距 (大)`;
     } else if (step === 2) {
         spacing = '0.5em';
+        btnInnerText.innerText = `字體間距 (更大)`;
     }
 
     root.style.letterSpacing = spacing;
     allButtons.forEach(button => {button.style.letterSpacing = spacing;});
-
-    var btnInnerText = document.querySelector(".letter-spacing-btn").querySelector(".nav-row-inner-text");
-    if (step === 0) {
-        btnInnerText.innerText = `字體間距`;
-    } else if (step === 1) {
-        btnInnerText.innerText = `字體間距 (大)`;
-    } else if (step === 2) {
-        btnInnerText.innerText = `字體間距 (更大)`;
-    }
 }
 
 // 待完成
 function changeContrast() {
-
+    console.log('hi');
+    if (root.classList.contains('mono-theme-palette')) {
+        root.classList.remove('mono-theme-palette')
+    } else {
+        root.classList.add('mono-theme-palette')
+    }
 }
 
 function changeAnimation() {
+    animationStep++;
+    var step = animationStep % 2;
+    var btnInnerText = document.querySelector(".animation-btn").querySelector(".nav-row-inner-text");
+    if (step === 0) {
+        allElements.forEach(element => {element.classList.remove('transition-none');});
+        btnInnerText.innerText = `關閉動畫`;
+    } else if (step === 1) {
+        allElements.forEach(element => {element.classList.add('transition-none');});
+        btnInnerText.innerText = `開啟動畫`;
+    }
 }
 
 function changeReset() {
@@ -153,15 +157,20 @@ function changeReset() {
     root.style.setProperty('--font-weight-bold', '600');
     root.style.letterSpacing = 'normal';
     allButtons.forEach(button => {button.style.letterSpacing = 'normal';});
+    allElements.forEach(element => {element.classList.remove('transition-none');});
     fontSizeStep = 0;
     fontWeightStep = 0;
     letterSpacingStep = 0;
+    contrastStep = 0;
+    animationStep = 0;
     var btnInnerText = document.querySelector(".font-size-btn").querySelector(".nav-row-inner-text");
     btnInnerText.innerText = `字體大小`;
     var btnInnerText = document.querySelector(".font-weight-btn").querySelector(".nav-row-inner-text");
     btnInnerText.innerText = `字體粗細`;
     var btnInnerText = document.querySelector(".letter-spacing-btn").querySelector(".nav-row-inner-text");
     btnInnerText.innerText = `字體間距`;
+    var btnInnerText = document.querySelector(".animation-btn").querySelector(".nav-row-inner-text");
+    btnInnerText.innerText = `關閉動畫`;
 }
 
 
@@ -211,31 +220,31 @@ function handleLastMenuItemKeyDown(event) {
 
 
 // slides
-let slideIndex = 1;
-showSlides(slideIndex);
+// let slideIndex = 1;
+// showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+// // Next/previous controls
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+// // Thumbnail image controls
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
+// function showSlides(n) {
+//   let i;
+//   let slides = document.getElementsByClassName("mySlides");
+//   let dots = document.getElementsByClassName("dot");
+//   if (n > slides.length) {slideIndex = 1}
+//   if (n < 1) {slideIndex = slides.length}
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].className.replace(" active", "");
+//   }
+//   slides[slideIndex-1].style.display = "block";
+//   dots[slideIndex-1].className += " active";
+// }

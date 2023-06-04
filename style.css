@@ -370,6 +370,18 @@ nav > * > *:not(:first-child) {
     margin-left: var(--nav-btn-height);
 }
 
+.give-space {
+    margin-block-start: 1rem !important;
+}
+
+.line {
+    width: 80%;
+    height: 1.5px;
+    background-color: var(--on-background);
+    opacity: 0.1;
+    transform: translateX(10%);
+}
+
 /* swipper */
 .swiper-container {
     width: 400px;
@@ -502,7 +514,7 @@ section h2 {
 }
 
 .section-nav {
-    grid-area: nav;
+    
 
 }
 
@@ -510,6 +522,7 @@ section h2 {
 
 
 .section-nav {
+    grid-area: nav;
     width: var(--content-width);
     /* padding: 1rem; */
     /* background-color: var(--background); */
@@ -536,7 +549,8 @@ section h2 {
 
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .section-nav > a:hover {

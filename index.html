@@ -74,7 +74,9 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button type="menu" class="nav-row" onclick="goToLayer(3)" aria-label="開啟關於學會選單" aria-controls="關於學會選單" aria-expanded="false">
+                    <div class="line"></div>
+
+                    <button type="menu" class="nav-row give-space" onclick="goToLayer(3)" aria-label="開啟關於學會選單" aria-controls="關於學會選單" aria-expanded="false">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">info</span>
                             <div>關於學會</div>
@@ -107,7 +109,9 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <a href="#" class="nav-row" aria-label="會員登入">
+                    <div class="line"></div>
+
+                    <a href="#" class="nav-row give-space" aria-label="會員登入">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">account_circle</span>
                             <div>會員登入</div>
@@ -117,7 +121,7 @@
                     <button type="button" class="nav-row theme-btn" onclick="changeTheme()" aria-label="切換至深色模式">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">dark_mode</span>
-                            <div class="nav-row-inner-text">切換至深色模式</div>
+                            <div class="nav-row-inner-text">深色模式：關閉</div>
                         </div>
                     </button>
                 </div>
@@ -441,17 +445,21 @@
         
             <div class="section-nav">
                 <a href="#">
+                    <span class="material-symbols-sharp">info</span>
                     關於學會
                 </a>
                 <a href="#">
+                    <span class="material-symbols-sharp">event_available</span>
                     活動公告
                 </a>
                 <a href="#">
+                    <span class="material-symbols-sharp">article</span>
                     學會出版
                 </a>
                 <a onkeydown="handleLastMenuItemKeyDown(event)" href="#" >
                 <!-- onkeydown="handleLastMenuItemKeyDown(event)"要改到之後裡面的最後一個按鈕 -->
-                    網路資源
+                <span class="material-symbols-sharp">language</span>
+                網路資源
                 </a>
             </div>
         </section>

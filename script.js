@@ -194,11 +194,11 @@ var themeBtnIcon = document.querySelector(".theme-btn").querySelector("span");
 function changeTheme() {
     if (root.classList.contains('dark-theme-palette')) {
         root.classList.remove('dark-theme-palette');
-        themeBtn.innerText = `切換至深色模式`;
+        themeBtn.innerText = `深色模式：關閉`;
         themeBtnIcon.innerText = `dark_mode`;
     } else {
         root.classList.add('dark-theme-palette')
-        themeBtn.innerText = `切換至淺色模式`;
+        themeBtn.innerText = `深色模式：開啟`;
         themeBtnIcon.innerText = `light_mode`;
     }
 }

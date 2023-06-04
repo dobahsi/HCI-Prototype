@@ -16,9 +16,6 @@
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="./style.css">
 
-    <!-- swipper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
@@ -398,9 +395,33 @@
         <div class="swiper-button-next"></div>
 
         <div class="swiper-pagination"></div>
-    </div> -->
+    </div> -->   
 
-    <img src="./assets/slide-1.png" class="slider" alt="照片">
+    <div class="slider-block">
+        <div class="slider-list-container">
+            <div class="slider-list">
+                <img src="./assets/slide-1.png" alt="照片">
+                <img src="./assets/slide-2.png" alt="照片">
+                <img src="./assets/slide-3.png" alt="照片">
+            </div>
+        </div>
+        
+        <div class="slider-buttons">
+            <button type="button" aria-label="上一張照片" class="slider-button" onclick="sliderStepPush(-1)">
+                <span class="material-symbols-sharp">navigate_before</span>
+            </button>
+
+            <div class="slider-steps">
+                <button type="button" aria-label="active-slider" onclick="sliderStepRender(0)"></button>
+                <button type="button" aria-label="inactive-slider" onclick="sliderStepRender(1)"></button>
+                <button type="button" aria-label="inactive-slider" onclick="sliderStepRender(2)"></button>
+            </div>
+
+            <button type="button" aria-label="下一張照片" class="slider-button" onclick="sliderStepPush(1)">
+                <span class="material-symbols-sharp">navigate_next</span>
+            </button>
+        </div>
+    </div>
 
     <main>
         <section class="section-content">
@@ -496,8 +517,6 @@
     </footer>
 
 </body>
-<!-- swipper -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script type="text/javascript" src="./script.js"></script>
 

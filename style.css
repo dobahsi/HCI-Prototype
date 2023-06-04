@@ -91,7 +91,7 @@ a[target="_blank"]:after {
     --surface-variant: #f4ddde;
     --on-surface-variant: #463839;
 
-    --content-width: clamp(240px, 100%, 60rem);
+    --content-width: clamp(240px, calc(100svw - 12px), 60rem);
 
     --focus-color: #ba1a1a;
 
@@ -386,19 +386,107 @@ nav > * > *:not(:first-child) {
     transform: translateX(10%);
 }
 
-/* swipper */
-.swiper-container {
-    width: 400px;
-    height: 400px;
-    /* background-color: #000000; */
-
-    /* overflow: hidden; */
-}
-
-.slider {
+/* slider */
+.slider-block {
     width: var(--content-width);
+    height: calc(var(--content-width) * 3/5);
+    /* border: solid 1px var(--outline); */
+    /* background-color: #000000; */
+    flex-shrink: 0;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "content";
+
 }
 
+.slider-list-container {
+    grid-area: content;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-list {
+    height: 100%;
+    transition: 0.5s;
+    
+    display: flex;
+}
+
+.slider-list > img {
+    width: var(--content-width);
+    height: calc(var(--content-width) * 3/5);
+    object-fit: contain;
+}
+
+.slider-buttons {
+    grid-area: content;
+    z-index: 9;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--primary-container);
+    margin: 1rem;
+    transition: background-color 0.2s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-button > span {
+    font-size: 3rem;
+    color: var(--on-primary-container);
+    transition: color 0.2s;
+
+}
+
+.slider-button:hover {
+    background-color: var(--primary);
+}
+
+.slider-button:hover > span {
+    color: var(--on-primary);
+}
+
+.slider-steps {
+    align-self: flex-end;
+    margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.slider-steps button {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--on-primary);
+    border: 2.5px solid var(--on-primary);
+    outline: 2.5px solid var(--primary);
+    padding: 2px;
+    transition: background-color 0.2s;
+}
+
+.slider-steps button[aria-label="active-slider"] {
+    background-color: var(--primary);
+
+}
+
+.slider-steps button:hover {
+    background-color: var(--primary);
+}
 
 
 /* main */
@@ -558,7 +646,7 @@ section h2 {
 footer {
     width: 100%;
     background-color: var(--surface-variant);
-    padding: 1rem;
+    padding: 2rem;
     color: var(--on-surface-variant);
 
     display: flex;

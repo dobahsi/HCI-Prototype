@@ -245,26 +245,6 @@ function changeTheme() {
     }
 }
 
-
-const swiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-  });
-
-
 var lastElement = document.querySelectorAll('.last-element');
 lastElement.forEach(element => {
     element.addEventListener('focus', () => {
@@ -274,32 +254,33 @@ lastElement.forEach(element => {
     });
 });
 
-// slides
-// let slideIndex = 1;
-// showSlides(slideIndex);
+// slider
+var sliderList = document.querySelector('.slider-list')
+var sliderSteps = document.querySelectorAll('.slider-steps')
+var sliderIndex = 0
 
-// // Next/previous controls
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
+function sliderStepPush(push) {
+    sliderIndex += push
 
-// // Thumbnail image controls
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
+    if (sliderIndex < 0) {
+        sliderIndex = 2
+    } else if (sliderIndex > 2) {
+        sliderIndex = 0
+    }
+    sliderStepRender(sliderIndex)
+}
 
-// function showSlides(n) {
-//   let i;
-//   let slides = document.getElementsByClassName("mySlides");
-//   let dots = document.getElementsByClassName("dot");
-//   if (n > slides.length) {slideIndex = 1}
-//   if (n < 1) {slideIndex = slides.length}
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].className.replace(" active", "");
-//   }
-//   slides[slideIndex-1].style.display = "block";
-//   dots[slideIndex-1].className += " active";
-// }
+function sliderStepRender(step) {
+    sliderIndex = step
+    sliderList.style.translate = '-' + sliderList.clientWidth*step + 'px'
+    
+    var sliderStepsButtons = document.querySelector('.slider-steps').querySelectorAll('button')
+
+    sliderStepsButtons.forEach((button, index) => {
+        if (index === step) {
+            button.setAttribute('aria-label', 'active-slider')
+        } else {
+            button.setAttribute('aria-label', 'inactive-slider')
+        }
+    })
+}

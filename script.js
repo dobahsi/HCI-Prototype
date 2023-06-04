@@ -68,9 +68,6 @@ function goToLayer(e, layer) {
 
 }
 
-// goToLayer(2)
-
-
 function backToFirstLayer(e, layer) {
     console.log(e);
     var mainWindow = document.querySelector('.nav-layer-1');
@@ -92,7 +89,6 @@ function backToFirstLayer(e, layer) {
 
     if (e.pointerId === -1) {mainWindowLayerBtn.focus()};
 }
-
 
 // accessibility settings
 var root = document.documentElement;
@@ -278,9 +274,9 @@ function sliderStepRender(step) {
 
     sliderStepsButtons.forEach((button, index) => {
         if (index === step) {
-            button.setAttribute('aria-label', 'active-slider')
+            button.setAttribute('aria-selected', 'true')
         } else {
-            button.setAttribute('aria-label', 'inactive-slider')
+            button.setAttribute('aria-selected', 'false')
         }
     })
 }

@@ -429,14 +429,20 @@ section h2 {
     gap: 2rem;
 }
 
-.section-more > div {
+.section-more {
     width: 8rem;
     height: 2.7rem;
+    border-radius: 1.35rem;
+}
+
+.section-more > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.35rem;
     background-color: var(--primary);
     color: var(--on-primary);
     font-size: 1.2rem;
     font-weight: var(--font-weight);
-    border-radius: 2rem;
     /* box-shadow: var(--main-container-box-shadow); */
     transition: box-shadow 0.2s ease-in-out;
 

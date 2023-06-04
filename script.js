@@ -83,20 +83,20 @@ var animationBtn = document.querySelector(".animation-btn").querySelector(".nav-
 
 function changeFontSize() {
     fontSizeStep++;
-    var step = fontSizeStep % 3;
+    var step = fontSizeStep % 4;
 
     if (step === 0) {
         root.style.fontSize = '100%';
-        fontSizeBtn.innerText = `字體大小`;
+        fontSizeBtn.innerText = `字體大小：中`;
     } else if (step === 1) {
         root.style.fontSize = '112.5%';
-        fontSizeBtn.innerText = `字體大小 (大)`;
+        fontSizeBtn.innerText = `字體大小：大`;
     } else if (step === 2) {
         root.style.fontSize = '125%';
-        fontSizeBtn.innerText = `字體大小 (更大)`;
+        fontSizeBtn.innerText = `字體大小：更大`;
     } else if (step === 3) {
         root.style.fontSize = '87.5%';
-        fontSizeBtn.innerText = `字體大小 (小)`;
+        fontSizeBtn.innerText = `字體大小：小`;
     }
 }
 
@@ -107,15 +107,15 @@ function changeFontWeight() {
     if (step === 0) {
         root.style.setProperty('--font-weight', '400');
         root.style.setProperty('--font-weight-bold', '600');
-        fontWeightBtn.innerText = `字體粗細`;
+        fontWeightBtn.innerText = `字體粗細：中`;
     } else if (step === 1) {
         root.style.setProperty('--font-weight', '500');
         root.style.setProperty('--font-weight-bold', '700');
-        fontWeightBtn.innerText = `字體粗細 (粗)`;
+        fontWeightBtn.innerText = `字體粗細：粗`;
     } else if (step === 2) {
         root.style.setProperty('--font-weight', '600');
         root.style.setProperty('--font-weight-bold', '700');
-        fontWeightBtn.innerText = `字體粗細 (更粗)`;
+        fontWeightBtn.innerText = `字體粗細：更粗`;
     }
 }
 
@@ -126,13 +126,13 @@ function changeLetterSpacing() {
 
     if (step === 0) {
         spacing = 'normal';
-        letterSpacingBtn.innerText = `字體間距`;
+        letterSpacingBtn.innerText = `字體間距：中`;
     } else if (step === 1) {
         spacing = '0.3em';
-        letterSpacingBtn.innerText = `字體間距 (大)`;
+        letterSpacingBtn.innerText = `字體間距：大`;
     } else if (step === 2) {
         spacing = '0.5em';
-        letterSpacingBtn.innerText = `字體間距 (更大)`;
+        letterSpacingBtn.innerText = `字體間距：更大`;
     }
 
     root.style.letterSpacing = spacing;
@@ -146,11 +146,11 @@ function changeContrast() {
         root.classList.remove('mono-theme-palette')
         allImages.forEach(image => {image.style.filter = 'grayscale(0)';});
         console.log(allImages[0].style);
-        contrastBtn.innerText = `去飽和`;
+        contrastBtn.innerText = `去飽和：關閉`;
     } else if (step === 1) {
         root.classList.add('mono-theme-palette')
         allImages.forEach(image => {image.style.filter = 'grayscale(1)';});
-        contrastBtn.innerText = `去飽和(開啟)`;
+        contrastBtn.innerText = `去飽和：開啟`;
     }
 }
 
@@ -159,10 +159,10 @@ function changeAnimation() {
     var step = animationStep % 2;
     if (step === 0) {
         allElements.forEach(element => {element.classList.remove('transition-none');});
-        animationBtn.innerText = `關閉動畫`;
+        animationBtn.innerText = `動畫：開啟`;
     } else if (step === 1) {
         allElements.forEach(element => {element.classList.add('transition-none');});
-        animationBtn.innerText = `開啟動畫`;
+        animationBtn.innerText = `動畫：關閉`;
     }
 }
 
@@ -182,11 +182,11 @@ function changeReset() {
     contrastStep = 0;
     animationStep = 0;
 
-    contrastBtn.innerText = `去飽和`;
-    fontSizeBtn.innerText = `字體大小`;
-    fontWeightBtn.innerText = `字體粗細`;
-    letterSpacingBtn.innerText = `字體間距`;
-    animationBtn.innerText = `關閉動畫`;
+    contrastBtn.innerText = `去飽和：關閉`;
+    fontSizeBtn.innerText = `字體大小：中`;
+    fontWeightBtn.innerText = `字體粗細：中`;
+    letterSpacingBtn.innerText = `字體間距：中`;
+    animationBtn.innerText = `動畫：開啟`;
 }
 
 var themeBtn = document.querySelector(".theme-btn").querySelector(".nav-row-inner-text");

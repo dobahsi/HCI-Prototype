@@ -274,9 +274,9 @@ function sliderStepRender(step) {
 
     sliderStepsButtons.forEach((button, index) => {
         if (index === step) {
-            button.setAttribute('aria-selected', 'true')
+            button.setAttribute('aria-label', `第${index+1}/3張圖片 目前狀態 顯示`)
         } else {
-            button.setAttribute('aria-selected', 'false')
+            button.setAttribute('aria-label', `第${index+1}/3張圖片 目前狀態 隱藏`)
         }
     })
 }

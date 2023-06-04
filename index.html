@@ -372,9 +372,7 @@
     </header>
 
     <div class="slider-block">
-        <button type="button" aria-label="上一張照片" aria-controls="照片列" class="slider-button" onclick="sliderStepPush(-1)">
-            <span class="material-symbols-sharp">navigate_before</span>
-        </button>
+        
 
         <div class="slider-list-container">
             <div class="slider-list">
@@ -384,15 +382,24 @@
             </div>
         </div>
 
+        
+    </div>
+
+    <div class="slider-buttons">
+        <button type="button" aria-label="上一張照片" aria-controls="照片列" class="slider-button" onclick="sliderStepPush(-1)">
+            <span class="material-symbols-sharp">navigate_before</span>
+        </button>
+
+        <div class="slider-steps">
+            <button type="button" onclick="sliderStepRender(0)" aria-label="第1/3張圖片 目前狀態 顯示" aria-live="polite"></button>
+            <button type="button" onclick="sliderStepRender(1)" aria-label="第2/3張照片 目前狀態 隱藏" aria-live="polite"></button>
+            <button type="button" onclick="sliderStepRender(2)" aria-label="第3/3張照片 目前狀態 隱藏" aria-live="polite"></button>
+        </div>
+        
+
         <button type="button" aria-label="下一張照片" aria-controls="照片列" class="slider-button" onclick="sliderStepPush(1)">
             <span class="material-symbols-sharp">navigate_next</span>
         </button>
-    </div>
-
-    <div class="slider-steps">
-        <button type="button" onclick="sliderStepRender(0)" aria-label="第1/3張照片" aria-selected="true"></button>
-        <button type="button" onclick="sliderStepRender(1)" aria-label="第2/3張照片" aria-selected="false"></button>
-        <button type="button" onclick="sliderStepRender(2)" aria-label="第3/3張照片" aria-selected="false"></button>
     </div>
 
     <main>

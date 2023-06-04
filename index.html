@@ -66,7 +66,7 @@
                         </div>
                     </a>
 
-                    <button type="menu" class="nav-row" onclick="goToLayer(2)" aria-label="開啟視覺輔助選單" aria-controls="視覺輔助選單" aria-haspopup="true" aria-expanded="false">
+                    <button type="menu" class="nav-row" onclick="goToLayer(event, 2)" aria-label="開啟視覺輔助選單" aria-controls="視覺輔助選單" aria-haspopup="true" aria-expanded="false">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">settings_accessibility</span>
                             <div>視覺輔助</div>
@@ -76,7 +76,7 @@
 
                     <div class="nav-line"></div>
 
-                    <button type="menu" class="nav-row" onclick="goToLayer(3)" aria-label="開啟關於學會選單" aria-controls="關於學會選單" aria-haspopup="true" aria-expanded="false">
+                    <button type="menu" class="nav-row" onclick="goToLayer(event, 3)" aria-label="開啟關於學會選單" aria-controls="關於學會選單" aria-haspopup="true" aria-expanded="false">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">info</span>
                             <div>關於學會</div>
@@ -84,7 +84,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button type="menu" class="nav-row" onclick="goToLayer(4)" aria-label="開啟活動公告選單" aria-controls="活動公告選單" aria-haspopup="true" aria-expanded="false">
+                    <button type="menu" class="nav-row" onclick="goToLayer(event, 4)" aria-label="開啟活動公告選單" aria-controls="活動公告選單" aria-haspopup="true" aria-expanded="false">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">event_available</span>
                             <div>活動公告</div>
@@ -92,7 +92,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button type="menu" class="nav-row" onclick="goToLayer(5)" aria-label="開啟學會出版選單" aria-controls="學會出版選單" aria-haspopup="true" aria-expanded="false">
+                    <button type="menu" class="nav-row" onclick="goToLayer(event, 5)" aria-label="開啟學會出版選單" aria-controls="學會出版選單" aria-haspopup="true" aria-expanded="false">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">article</span>
                             <div>學會出版</div>
@@ -100,7 +100,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button type="menu" class="nav-row" onclick="goToLayer(6)" aria-label="開啟網路資源選單" aria-controls="網路資源選單" aria-haspopup="true" aria-expanded="false"> 
+                    <button type="menu" class="nav-row" onclick="goToLayer(event, 6)" aria-label="開啟網路資源選單" aria-controls="網路資源選單" aria-haspopup="true" aria-expanded="false"> 
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">language</span>
                             <div>網路資源</div>
@@ -118,7 +118,7 @@
                     </a>
 
                     <button type="button" class="nav-row theme-btn" onclick="changeTheme()" aria-label="切換至深色模式">
-                        <!-- onkeydown="handleLastMenuItemKeyDown(event)"要改到之後裡面的最後一個按鈕 -->
+                        <!--"要改到之後裡面的最後一個按鈕 -->
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">light_mode</span>
                             <div class="nav-row-inner-text">深色模式：關閉</div>
@@ -132,7 +132,7 @@
 
                 <!-- 無障礙設定 -->
                 <div class="nav-layer-inner nav-layer-2 display-none">
-                    <button class="nav-row" onclick="backToFirstLayer(2)">
+                    <button class="nav-row" onclick="backToFirstLayer(event, 2)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">arrow_back</span>
                             <div>回導覽列</div>
@@ -174,7 +174,7 @@
                         </div>
                     </button>
     
-                    <button class="nav-row" onclick="changeReset()" onkeydown="handleLastMenuItemKeyDown(event)">
+                    <button class="nav-row" onclick="changeReset()"">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">replay</span>
                             <div>重置設定</div>
@@ -186,7 +186,7 @@
 
                 <!-- 關於學會 -->
                 <div class="nav-layer-inner nav-layer-3 display-none">
-                    <button class="nav-row" onclick="backToFirstLayer(3)">
+                    <button class="nav-row" onclick="backToFirstLayer(event, 3)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">arrow_back</span>
                             <div>回導覽列</div>
@@ -241,7 +241,7 @@
                         </div>
                     </a>
     
-                    <a href="#" class="nav-row" onkeydown="handleLastMenuItemKeyDown(event)">
+                    <a href="#" class="nav-row"">
                         <div class="nav-row-inner">
                             <div>我要捐款</div>
                         </div>
@@ -252,7 +252,7 @@
 
                 <!-- 活動公告 -->
                 <div class="nav-layer-inner nav-layer-4 display-none">
-                    <button class="nav-row" onclick="backToFirstLayer(4)">
+                    <button class="nav-row" onclick="backToFirstLayer(event, 4)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">arrow_back</span>
                             <div>回導覽列</div>
@@ -271,7 +271,7 @@
                         </div>
                     </a>
     
-                    <a href="#" class="nav-row" onkeydown="handleLastMenuItemKeyDown(event)">
+                    <a href="#" class="nav-row"">
                         <div class="nav-row-inner">
                             <div>求才求職</div>
                         </div>
@@ -282,7 +282,7 @@
 
                 <!-- 學會出版 -->
                 <div class="nav-layer-inner nav-layer-5 display-none">
-                    <button class="nav-row" onclick="backToFirstLayer(5)">
+                    <button class="nav-row" onclick="backToFirstLayer(event, 5)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">arrow_back</span>
                             <div>回導覽列</div>
@@ -313,7 +313,7 @@
                         </div>
                     </a>
     
-                    <a href="#" class="nav-row" onkeydown="handleLastMenuItemKeyDown(event)">
+                    <a href="#" class="nav-row"">
                         <div class="nav-row-inner">
                             <div>電子報</div>
                         </div>
@@ -325,7 +325,7 @@
 
                 <!-- 網路資源 -->
                 <div class="nav-layer-inner nav-layer-6 display-none">
-                    <button class="nav-row" onclick="backToFirstLayer(6)">
+                    <button class="nav-row" onclick="backToFirstLayer(event, 6)">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">arrow_back</span>
                             <div>回導覽列</div>
@@ -356,7 +356,7 @@
                         </div>
                     </a>
                     
-                    <a href="#" class="nav-row" onkeydown="handleLastMenuItemKeyDown(event)">
+                    <a href="#" class="nav-row"">
                         <div class="nav-row-inner">
                             <div>國內外圖書館</div>
                         </div>
@@ -468,8 +468,8 @@
                     <span class="material-symbols-sharp">article</span>
                     學會出版
                 </a>
-                <a onkeydown="handleLastMenuItemKeyDown(event)" href="#" >
-                <!-- onkeydown="handleLastMenuItemKeyDown(event)"要改到之後裡面的最後一個按鈕 -->
+                <a" href="#" >
+                <!--"要改到之後裡面的最後一個按鈕 -->
                 <span class="material-symbols-sharp">language</span>
                 網路資源
                 </a>

@@ -245,7 +245,9 @@ lastElement.forEach(element => {
     element.addEventListener('focusin', () => {
         var focusedElement = document.activeElement;
         var goToElement = document.querySelector(`${focusedElement.innerText}`);
-        goToElement.focus()
+        goToElement.focus();
+        console.log(goToElement);
+        goToElement.style.backgroundColor = '#000000';
     });
 });
 

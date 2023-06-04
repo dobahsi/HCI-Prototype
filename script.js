@@ -215,6 +215,7 @@ function changeReset() {
     animationBtn.innerText = `動畫：開啟`;
 }
 
+//dark theme
 var themeBtn = document.querySelector(".theme-btn").querySelector(".nav-row-inner-text");
 var themeBtnIcon = document.querySelector(".theme-btn").querySelector("span");
 function changeTheme() {
@@ -231,6 +232,14 @@ function changeTheme() {
     }
 }
 
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    themeBtn.setAttribute('aria-label', '切換深色模式，目前狀態：開啟')
+    root.classList.add('dark-theme-palette')
+    themeBtn.innerText = `深色模式：開啟`;
+    themeBtnIcon.innerText = `dark_mode`;
+}
+
+// last element focus
 var lastElement = document.querySelectorAll('.last-element');
 lastElement.forEach(element => {
     element.addEventListener('focus', () => {

@@ -672,9 +672,19 @@ footer ul {
     gap: 0.5rem;
 }
 
-footer ul li {
+footer > ul span {
+    font-size: 1rem;
+}
+
+footer ul + li {
     display: flex;
     align-items: end;
+    gap: 0.5rem;
+}
+
+footer > ul > li > a {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
 }
 

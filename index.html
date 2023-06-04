@@ -372,6 +372,10 @@
     </header>
 
     <div class="slider-block">
+        <button type="button" aria-label="上一張照片" aria-controls="照片列" class="slider-button" onclick="sliderStepPush(-1)">
+            <span class="material-symbols-sharp">navigate_before</span>
+        </button>
+
         <div class="slider-list-container">
             <div class="slider-list">
                 <div><img src="./assets/slide-1.png" alt="你今天圖書館了嗎？"></div>
@@ -379,22 +383,16 @@
                 <div><img src="./assets/slide-3.png" alt="歡迎加入學會！會員招收中！"></div>
             </div>
         </div>
-        
-        <div class="slider-buttons">
-            <button type="button" aria-label="上一張照片" aria-controls="照片列" class="slider-button" onclick="sliderStepPush(-1)">
-                <span class="material-symbols-sharp">navigate_before</span>
-            </button>
 
-            <div class="slider-steps">
-                <button type="button" onclick="sliderStepRender(0)" aria-label="第1/3張照片" aria-selected="true"></button>
-                <button type="button" onclick="sliderStepRender(1)" aria-label="第2/3張照片" aria-selected="false"></button>
-                <button type="button" onclick="sliderStepRender(2)" aria-label="第3/3張照片" aria-selected="false"></button>
-            </div>
+        <button type="button" aria-label="下一張照片" aria-controls="照片列" class="slider-button" onclick="sliderStepPush(1)">
+            <span class="material-symbols-sharp">navigate_next</span>
+        </button>
+    </div>
 
-            <button type="button" aria-label="下一張照片" aria-controls="照片列" class="slider-button" onclick="sliderStepPush(1)">
-                <span class="material-symbols-sharp">navigate_next</span>
-            </button>
-        </div>
+    <div class="slider-steps">
+        <button type="button" onclick="sliderStepRender(0)" aria-label="第1/3張照片" aria-selected="true"></button>
+        <button type="button" onclick="sliderStepRender(1)" aria-label="第2/3張照片" aria-selected="false"></button>
+        <button type="button" onclick="sliderStepRender(2)" aria-label="第3/3張照片" aria-selected="false"></button>
     </div>
 
     <main>

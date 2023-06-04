@@ -428,7 +428,7 @@ section h2 {
 
 .section-more > div {
     width: 8rem;
-    height: 3rem;
+    height: 2.8rem;
     background-color: var(--primary);
     color: var(--on-primary);
     font-size: 1.2rem;
@@ -552,7 +552,7 @@ footer ul {
 
     section > div {
         flex-direction: row;
-        align-items: center;
+        align-items: end;
     }
 }
 

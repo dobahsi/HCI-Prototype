@@ -5,11 +5,6 @@ var menuCloseBtn = document.querySelector('.menu-close-btn');
 
 function toggleMenu(e) {
     if(nav.classList.contains('menu-opened')){
-        var allFocusableElements = document.querySelectorAll('button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])');
-        allFocusableElements.forEach(element => {element.setAttribute('tabindex', '0')});
-        var allFocusableElementsInNav = document.querySelectorAll('nav button, nav input, nav select, nav textarea, nav a[href], nav [tabindex]:not([tabindex="-1"])');
-        allFocusableElementsInNav.forEach(element => {element.setAttribute('tabindex', '-1')});
-
         menuOpenBtn.setAttribute('aria-expanded', 'false');
         menuCloseBtn.setAttribute('aria-expanded', 'false');
         if (e.pointerId === -1) {menuOpenBtn.focus()};
@@ -23,11 +18,6 @@ function toggleMenu(e) {
         }, 300)
 
     } else {
-        var allFocusableElements = document.querySelectorAll('button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])');
-        allFocusableElements.forEach(element => {element.setAttribute('tabindex', '-1')});
-        var allFocusableElementsInNav = document.querySelectorAll('nav button, nav input, nav select, nav textarea, nav a[href], nav [tabindex]:not([tabindex="-1"])');
-        allFocusableElementsInNav.forEach(element => {element.setAttribute('tabindex', '0')});
-
         menuOpenBtn.setAttribute('aria-expanded', 'true');
         menuCloseBtn.setAttribute('aria-expanded', 'true');
         nav.setAttribute('aria-hidden', 'false');

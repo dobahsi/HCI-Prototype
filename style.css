@@ -292,7 +292,7 @@ nav > * > *:not(:first-child) {
 .search-bar > button {
     position: absolute;
     /* margin-left: 1rem; */
-    right: 1rem;
+    right: 1.5rem;
     font-size: var(--header-btn-icon-size);
     color: var(--on-background);
     width: var(--search-bar-height);

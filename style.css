@@ -32,8 +32,16 @@
     transition: none !important;
 }
 
-.rotate180 {
-    rotate: 180deg;
+.last-element {
+    width: 0 !important;
+    height: 0 !important;
+    background-color: transparent !important;
+    font-size: 0 !important;
+    color: transparent !important;
+}
+
+.last-element:focus {
+    outline: none !important;
 }
 
 button:hover {

@@ -3,10 +3,13 @@ var nav = document.querySelector('nav');
 var menuOpenBtn = document.querySelector('.menu-open-btn');
 var menuCloseBtn = document.querySelector('.menu-close-btn');
 
-function toggleMenu() {
+function toggleMenu(e) {
+    console.log(e);
     if(nav.classList.contains('menu-opened')){
         menuOpenBtn.setAttribute('aria-expanded', 'false');
         menuCloseBtn.setAttribute('aria-expanded', 'false');
+        if (e.pointerId === -1) {menuOpenBtn.focus()};
+
         nav.setAttribute('aria-hidden', 'true');
         nav.classList.remove('menu-opened')
         navBg.style.opacity = '0'
@@ -14,17 +17,21 @@ function toggleMenu() {
             nav.classList.add('display-none')
             navBg.classList.add('display-none')
         }, 300)
+
     } else {
         menuOpenBtn.setAttribute('aria-expanded', 'true');
         menuCloseBtn.setAttribute('aria-expanded', 'true');
         nav.setAttribute('aria-hidden', 'false');
-        nav.classList.remove('display-none')
-        navBg.classList.remove('display-none')
+        nav.classList.remove('display-none');
+        navBg.classList.remove('display-none');
+        if (e.pointerId === -1) {menuCloseBtn.focus()};
+
         setTimeout(() => {
             nav.classList.add('menu-opened')
             navBg.style.opacity = '0.3'
         }, 10)
     }
+
 }
 // toggleMenu()
 
@@ -32,9 +39,12 @@ var translatePercentage = 20;
 var mainWindow = document.querySelector('.nav-layer-1');
 
 function goToLayer(layer) {
+    console.log('go');
     var layerWindow = document.querySelector(`.nav-layer-${layer}`);
+    var layerBtn = layerWindow.children[0];
 
     layerWindow.classList.remove('display-none');
+    layerBtn.focus();
 
     setTimeout(() => {
         mainWindow.style.transform = `translateX(-${translatePercentage}%)`;
@@ -46,13 +56,17 @@ function goToLayer(layer) {
         layerWindow.style.opacity = '1';
         mainWindow.classList.add('display-none');
     }, 100);
+
 }
+
 // goToLayer(2)
 
 
 function backToFirstLayer(layer) {
+    console.log('back');
     var mainWindow = document.querySelector('.nav-layer-1');
     var layerWindow = document.querySelector(`.nav-layer-${layer}`);
+    var mainWindowLayerBtn = document.querySelector(`[onclick="goToLayer(${layer})"]`);
 
     mainWindow.classList.remove('display-none');
 
@@ -66,7 +80,10 @@ function backToFirstLayer(layer) {
         mainWindow.style.opacity = '1';
         layerWindow.classList.add('display-none');
     }, 100);
+
+    mainWindowLayerBtn.focus();
 }
+
 
 // accessibility settings
 var root = document.documentElement;
@@ -223,22 +240,14 @@ const swiper = new Swiper('.swiper-container', {
   });
 
 
-
-
-function handleLastMenuItemKeyDown(event) {
-    if (event.key === 'Tab' && !event.shiftKey) {
-        // Prevent the default Tab behavior
-        event.preventDefault();
-        // Focus the first element in the menu
-        if(nav.classList.contains('menu-opened')){
-        document.querySelector('.menu .menu-close-btn').focus();
-        } else {
-            document.querySelector('.menu .header-btn').focus();
-        }
-        
-    }
-}
-
+var lastElement = document.querySelectorAll('.last-element');
+lastElement.forEach(element => {
+    element.addEventListener('focus', () => {
+        var focusedElement = document.activeElement;
+        var goToElement = document.querySelector(`${focusedElement.innerText}`);
+        goToElement.focus()
+    });
+});
 
 // slides
 // let slideIndex = 1;

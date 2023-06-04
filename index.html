@@ -33,14 +33,14 @@
 <body>
     <header>
         <div class="menu">
-            <button type="menu" class="header-btn menu-open-btn" onclick="toggleMenu()" aria-label="開啟導覽選單" aria-haspopup="true" aria-expanded="false" aria-controls="導覽選單">
+            <button type="menu" class="header-btn menu-open-btn" onclick="toggleMenu(event)" aria-label="開啟導覽選單" aria-haspopup="true" aria-expanded="false" aria-controls="導覽選單">
                 <span class="material-symbols-sharp">menu</span>
             </button>
 
-            <div class="nav-bg display-none" onclick="toggleMenu()"></div>
+            <div class="nav-bg display-none" onclick="toggleMenu(event)"></div>
 
             <nav class="display-none" aria-label="導覽選單" aria-hidden="true">
-                <button type="menu" class="menu-close-btn nav-top-btn" onclick="toggleMenu()" aria-expanded="false" aria-label="關閉導覽選單" aria-controls="導覽選單">
+                <button type="menu" class="menu-close-btn nav-top-btn" onclick="toggleMenu(event)" aria-expanded="false" aria-label="關閉導覽選單" aria-controls="導覽選單">
                     <span class="material-symbols-sharp">menu_open</span>
                 </button>
                 
@@ -74,7 +74,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <div class="nav-line" tabindex="0"></div>
+                    <div class="nav-line"></div>
 
                     <button type="menu" class="nav-row" onclick="goToLayer(3)" aria-label="開啟關於學會選單" aria-controls="關於學會選單" aria-haspopup="true" aria-expanded="false">
                         <div class="nav-row-inner">
@@ -117,13 +117,15 @@
                         </div>
                     </a>
 
-                    <button type="button" class="nav-row theme-btn" onclick="changeTheme()" onkeydown="handleLastMenuItemKeyDown(event)" aria-label="切換至深色模式">
+                    <button type="button" class="nav-row theme-btn" onclick="changeTheme()" aria-label="切換至深色模式">
                         <!-- onkeydown="handleLastMenuItemKeyDown(event)"要改到之後裡面的最後一個按鈕 -->
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">light_mode</span>
                             <div class="nav-row-inner-text">深色模式：關閉</div>
                         </div>
                     </button>
+
+                    <div class="last-element" tabindex="0" aria-label="已至底">.menu-close-btn</div>
                 </div>
                 
                 
@@ -178,6 +180,8 @@
                             <div>重置設定</div>
                         </div>
                     </button>
+
+                    <div class="last-element" tabindex="0" aria-label="已至底">.menu-close-btn</div>
                 </div>
 
                 <!-- 關於學會 -->
@@ -242,6 +246,8 @@
                             <div>我要捐款</div>
                         </div>
                     </a>
+
+                    <div class="last-element" tabindex="0" aria-label="已至底">.menu-close-btn</div>
                 </div>
 
                 <!-- 活動公告 -->
@@ -270,6 +276,8 @@
                             <div>求才求職</div>
                         </div>
                     </a>
+
+                    <div class="last-element" tabindex="0" aria-label="已至底">.menu-close-btn</div>
                 </div>
 
                 <!-- 學會出版 -->
@@ -311,6 +319,8 @@
                         </div>
                     </a>
                     <!-- 我把訂閱電子報拿掉了 -->
+
+                    <div class="last-element" tabindex="0" aria-label="已至底">.menu-close-btn</div>
                 </div>
 
                 <!-- 網路資源 -->
@@ -352,6 +362,8 @@
                         </div>
                     </a>
                     <!-- 把"圖書資訊"刪除 -->
+
+                    <div class="last-element" tabindex="0" aria-label="已至底">.menu-close-btn</div>
                 </div>
             </nav>
         </div>
@@ -392,13 +404,6 @@
 
     <main>
         <section class="section-content">
-            <div>
-                <h2>最新公告</h2>
-                <a href="#" class="section-more" aria-label="更多">
-                    <div>更多</div>
-                </a>
-            </div>
-            
             <a href="#" content="1">
                 <span>2023 / 04 / 27</span>
                 <p>
@@ -412,16 +417,16 @@
                     111 年資訊組織分析師認證考試報名繳費
                 </p>
             </a>
-        </section>
-
-        <section class="section-content">
+            
             <div>
-                <h2>最新活動</h2>
+                <h2>最新公告</h2>
                 <a href="#" class="section-more" aria-label="更多">
                     <div>更多</div>
                 </a>
             </div>
-            
+        </section>
+
+        <section class="section-content">
             <a href="#" content="1">
                 <span>2023 / 04 / 27</span>
                 <p>
@@ -435,6 +440,13 @@
                     112年度「提升圖書館員身心障礙服務專業知能」線上專題課程，歡迎踴躍報名參加！
                 </p>
             </a>
+            
+            <div>
+                <h2>最新活動</h2>
+                <a href="#" class="section-more" aria-label="更多">
+                    <div>更多</div>
+                </a>
+            </div>
         </section>
 
 
@@ -473,10 +485,10 @@
                 100 台北市中正區中山南路 20 號
             </li>
             <li>
-                (02) 2331-2475
+                <a href="tel:(02)2331-2475">(02)2331-2475</a>
             </li>
             <li>
-                lac@msg.ncl.edu.tw
+                <a href="mailto:lac@msg.ncl.edu.tw">lac@msg.ncl.edu.tw</a>
             </li>
         </ul>
 

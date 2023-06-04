@@ -434,21 +434,19 @@ section h2 {
     gap: 2rem;
 }
 
-.section-content > div {
+.section-content > h2 {
     grid-area: title;
     font-size: 2.5rem;
     font-weight: var(--font-weight-bold);
     color: var(--on-background);
-
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
 }
 
 .section-more {
+    grid-area: title;
     width: 8rem;
     height: 2.7rem;
     border-radius: 1.35rem;
+    margin-block-start: 5rem;
 }
 
 .section-more > div {
@@ -591,16 +589,24 @@ footer ul {
 @media screen and (max-width:768px) {
     .section-content {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
+        grid-template-rows: repeat(4, auto);
         grid-template-areas:
             "title"
             "content1"
-            "content2";
+            "content2"
+            "more";
     }
 
-    .section-content > div {
-        flex-direction: row;
-        align-items: end;
+    .section-more {
+        grid-area: more;
+        margin-block-start: 0;
+        width: 100%;
+        height: 3rem;
+        border-radius: 1.5rem;
+    }
+
+    .section-more > div {
+        border-radius: 1.5rem;
     }
 
     .section-nav-container {

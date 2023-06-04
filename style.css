@@ -370,11 +370,7 @@ nav > * > *:not(:first-child) {
     margin-left: var(--nav-btn-height);
 }
 
-.give-space {
-    margin-block-start: 1rem !important;
-}
-
-.line {
+.nav-line {
     width: 80%;
     height: 1.5px;
     background-color: var(--on-background);
@@ -513,13 +509,6 @@ section h2 {
     grid-area: title;
 }
 
-.section-nav {
-    
-
-}
-
-
-
 
 .section-nav {
     grid-area: nav;
@@ -584,6 +573,7 @@ footer ul {
 .footer-copyright {
     font-size: 0.8rem;
 }
+
 
 @media screen and (max-width:768px) {
     .section-content {

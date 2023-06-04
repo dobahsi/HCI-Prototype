@@ -195,11 +195,11 @@ function changeTheme() {
     if (root.classList.contains('dark-theme-palette')) {
         root.classList.remove('dark-theme-palette');
         themeBtn.innerText = `深色模式：關閉`;
-        themeBtnIcon.innerText = `dark_mode`;
+        themeBtnIcon.innerText = `light_mode`;
     } else {
         root.classList.add('dark-theme-palette')
         themeBtn.innerText = `深色模式：開啟`;
-        themeBtnIcon.innerText = `light_mode`;
+        themeBtnIcon.innerText = `dark_mode`;
     }
 }
 

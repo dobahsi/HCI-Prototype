@@ -242,7 +242,7 @@ const swiper = new Swiper('.swiper-container', {
 
 var lastElement = document.querySelectorAll('.last-element');
 lastElement.forEach(element => {
-    element.addEventListener('focus', () => {
+    element.addEventListener('focusin', () => {
         var focusedElement = document.activeElement;
         var goToElement = document.querySelector(`${focusedElement.innerText}`);
         goToElement.focus()

@@ -91,7 +91,7 @@ a[target="_blank"]:after {
     --surface-variant: #f4ddde;
     --on-surface-variant: #463839;
 
-    --content-width: clamp(240px, calc(100svw - 12px), 60rem);
+    --content-width: clamp(240px, 100%, 60rem);
 
     --focus-color: #ba1a1a;
 
@@ -389,9 +389,9 @@ nav > * > *:not(:first-child) {
 /* slider */
 .slider-block {
     width: var(--content-width);
-    height: calc(var(--content-width) * 3/5);
+    height: calc(var(--content-width) * 0.52);
     /* border: solid 1px var(--outline); */
-    /* background-color: #000000; */
+    background-color: var(--surface-variant);
     flex-shrink: 0;
 
     display: grid;
@@ -417,9 +417,9 @@ nav > * > *:not(:first-child) {
 }
 
 .slider-list > img {
-    width: var(--content-width);
-    height: calc(var(--content-width) * 3/5);
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .slider-buttons {

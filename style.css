@@ -660,13 +660,18 @@ footer {
 
 }
 
-.shifted-icon {
-    position: relative;
-    top: 5px;
-  }
-
 footer ul {
     font-size: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer ul li {
+    display: flex;
+    align-items: end;
+    gap: 0.5rem;
 }
 
 .footer-copyright {

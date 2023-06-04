@@ -98,20 +98,41 @@ var contrastBtn = document.querySelector(".contrast-btn").querySelector(".nav-ro
 var animationBtn = document.querySelector(".animation-btn").querySelector(".nav-row-inner-text");
 
 
+function changeContrast() {
+    contrastStep++;
+    var step = contrastStep % 2;
+    if (step === 0) {
+        contrastBtn.setAttribute('aria-label', '切換去飽和狀態，目前狀態：關閉')
+        root.classList.remove('mono-theme-palette')
+        allImages.forEach(image => {image.style.filter = 'grayscale(0)';});
+        console.log(allImages[0].style);
+        contrastBtn.innerText = `去飽和：關閉`;
+    } else if (step === 1) {
+        contrastBtn.setAttribute('aria-label', '切換去飽和狀態，目前狀態：關閉')
+        root.classList.add('mono-theme-palette')
+        allImages.forEach(image => {image.style.filter = 'grayscale(1)';});
+        contrastBtn.innerText = `去飽和：開啟`;
+    }
+}
+
 function changeFontSize() {
     fontSizeStep++;
     var step = fontSizeStep % 4;
 
     if (step === 0) {
+        fontSizeBtn.setAttribute('aria-label', '切換字體大小，目前大小：中')
         root.style.fontSize = '100%';
         fontSizeBtn.innerText = `字體大小：中`;
     } else if (step === 1) {
+        fontSizeBtn.setAttribute('aria-label', '切換字體大小，目前大小：大')
         root.style.fontSize = '112.5%';
         fontSizeBtn.innerText = `字體大小：大`;
     } else if (step === 2) {
+        fontSizeBtn.setAttribute('aria-label', '切換字體大小，目前大小：更大')
         root.style.fontSize = '125%';
         fontSizeBtn.innerText = `字體大小：更大`;
     } else if (step === 3) {
+        fontSizeBtn.setAttribute('aria-label', '切換字體大小，目前大小：小')
         root.style.fontSize = '87.5%';
         fontSizeBtn.innerText = `字體大小：小`;
     }
@@ -122,14 +143,17 @@ function changeFontWeight() {
     var step = fontWeightStep % 3;
 
     if (step === 0) {
+        fontWeightBtn.setAttribute('aria-label', '切換字體粗細，目前粗細：中')
         root.style.setProperty('--font-weight', '400');
         root.style.setProperty('--font-weight-bold', '600');
         fontWeightBtn.innerText = `字體粗細：中`;
     } else if (step === 1) {
+        fontWeightBtn.setAttribute('aria-label', '切換字體粗細，目前粗細：粗')
         root.style.setProperty('--font-weight', '500');
         root.style.setProperty('--font-weight-bold', '700');
         fontWeightBtn.innerText = `字體粗細：粗`;
     } else if (step === 2) {
+        fontWeightBtn.setAttribute('aria-label', '切換字體粗細，目前粗細：更粗')
         root.style.setProperty('--font-weight', '600');
         root.style.setProperty('--font-weight-bold', '700');
         fontWeightBtn.innerText = `字體粗細：更粗`;
@@ -142,12 +166,15 @@ function changeLetterSpacing() {
     var spacing = 'normal';
 
     if (step === 0) {
+        letterSpacingBtn.setAttribute('aria-label', '切換字體間距，目前間距：中')
         spacing = 'normal';
         letterSpacingBtn.innerText = `字體間距：中`;
     } else if (step === 1) {
+        letterSpacingBtn.setAttribute('aria-label', '切換字體間距，目前間距：大')
         spacing = '0.3em';
         letterSpacingBtn.innerText = `字體間距：大`;
     } else if (step === 2) {
+        letterSpacingBtn.setAttribute('aria-label', '切換字體間距，目前間距：更大')
         spacing = '0.5em';
         letterSpacingBtn.innerText = `字體間距：更大`;
     }
@@ -156,28 +183,15 @@ function changeLetterSpacing() {
     allButtons.forEach(button => {button.style.letterSpacing = spacing;});
 }
 
-function changeContrast() {
-    contrastStep++;
-    var step = contrastStep % 2;
-    if (step === 0) {
-        root.classList.remove('mono-theme-palette')
-        allImages.forEach(image => {image.style.filter = 'grayscale(0)';});
-        console.log(allImages[0].style);
-        contrastBtn.innerText = `去飽和：關閉`;
-    } else if (step === 1) {
-        root.classList.add('mono-theme-palette')
-        allImages.forEach(image => {image.style.filter = 'grayscale(1)';});
-        contrastBtn.innerText = `去飽和：開啟`;
-    }
-}
-
 function changeAnimation() {
     animationStep++;
     var step = animationStep % 2;
     if (step === 0) {
+        animationBtn.setAttribute('aria-label', '切換動畫狀態，目前狀態：開啟')
         allElements.forEach(element => {element.classList.remove('transition-none');});
         animationBtn.innerText = `動畫：開啟`;
     } else if (step === 1) {
+        animationBtn.setAttribute('aria-label', '切換動畫狀態，目前狀態：關閉')
         allElements.forEach(element => {element.classList.add('transition-none');});
         animationBtn.innerText = `動畫：關閉`;
     }
@@ -210,10 +224,12 @@ var themeBtn = document.querySelector(".theme-btn").querySelector(".nav-row-inne
 var themeBtnIcon = document.querySelector(".theme-btn").querySelector("span");
 function changeTheme() {
     if (root.classList.contains('dark-theme-palette')) {
+        themeBtn.setAttribute('aria-label', '切換深色模式，目前狀態：關閉')
         root.classList.remove('dark-theme-palette');
         themeBtn.innerText = `深色模式：關閉`;
         themeBtnIcon.innerText = `light_mode`;
     } else {
+        themeBtn.setAttribute('aria-label', '切換深色模式，目前狀態：開啟')
         root.classList.add('dark-theme-palette')
         themeBtn.innerText = `深色模式：開啟`;
         themeBtnIcon.innerText = `dark_mode`;

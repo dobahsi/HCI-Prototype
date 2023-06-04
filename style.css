@@ -101,8 +101,8 @@ a[target="_blank"]:after {
 
 /* dark */
 .dark-theme-palette{
-    --primary: #ffb2b9;
-    --on-primary: #67001e;
+    --primary: #891832;
+    --on-primary: #ffdadc;
     --primary-container: #891832;
     --on-primary-container: #ffdadc;
     --secondary: #e5bdbf;

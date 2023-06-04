@@ -517,9 +517,9 @@ section > a[content]:hover {
 /* footer */
 footer {
     width: 100%;
-    background-color: var(--surface-variant);
+    background-color: var(--tertiary-container);
     padding: 1rem;
-    color: var(--on-surface-variant);
+    color: var(--on-tertiary-container);
 
     display: flex;
     flex-direction: column;

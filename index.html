@@ -33,39 +33,40 @@
 <body>
     <header>
         <div class="menu">
-            <button class="header-btn menu-open-btn" aria-expanded="false" aria-label="導覽列" onclick="toggleMenu()">
+            <button type="menu" class="header-btn menu-open-btn" onclick="toggleMenu()" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="導覽選單">
                 <span class="material-symbols-sharp">menu</span>
             </button>
 
             <div class="nav-bg display-none" onclick="toggleMenu()"></div>
-            <nav class="display-none">
-                <button class="menu-close-btn nav-top-btn" onclick="toggleMenu()">
+
+            <nav class="display-none" aria-label="導覽選單" aria-hidden="true">
+                <button type="menu" class="menu-close-btn nav-top-btn" onclick="toggleMenu()" aria-expanded="false" aria-label="關閉導覽選單" aria-controls="導覽選單">
                     <span class="material-symbols-sharp">menu_open</span>
                 </button>
                 
                 <div class="nav-layer-1">
                     <form class="search-bar">
-                        <input class="nav-row" type="text" placeholder="搜尋">
-                        <button>
+                        <input type="text" class="nav-row" placeholder="搜尋" aria-label="搜尋欄">
+                        <button type="submit" aria-label="搜尋提交按鈕" aria-controls="搜尋欄">
                             <span class="material-symbols-sharp">search</span>
                         </button>
                     </form>
 
-                    <a href="#" class="nav-row">
+                    <a href="#" class="nav-row" aria-label="回首頁">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">home</span>
                             <div>回首頁</div>
                         </div>
                     </a>
 
-                    <a href="#" class="nav-row">
+                    <a href="#" class="nav-row" aria-label="網站導覽">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">map</span>
                             <div>網站導覽</div>
                         </div>
                     </a>
 
-                    <button class="nav-row" onclick="goToLayer(2)">
+                    <button type="menu" class="nav-row" onclick="goToLayer(2)" aria-label="開啟無障礙設定選單" aria-controls="無障礙設定選單" aria-expanded="false">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">settings_accessibility</span>
                             <div>無障礙設定</div>
@@ -73,7 +74,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button class="nav-row" onclick="goToLayer(3)">
+                    <button type="menu" class="nav-row" onclick="goToLayer(3)" aria-label="開啟關於學會選單" aria-controls="關於學會選單" aria-expanded="false">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">info</span>
                             <div>關於學會</div>
@@ -81,7 +82,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button class="nav-row" onclick="goToLayer(4)">
+                    <button type="menu" class="nav-row" onclick="goToLayer(4)" aria-label="開啟活動公告選單" aria-controls="活動公告選單" aria-expanded="false">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">event_available</span>
                             <div>活動公告</div>
@@ -89,7 +90,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button class="nav-row" onclick="goToLayer(5)">
+                    <button type="menu" class="nav-row" onclick="goToLayer(5)" aria-label="開啟學會出版選單" aria-controls="學會出版選單" aria-expanded="false">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">article</span>
                             <div>學會出版</div>
@@ -97,7 +98,7 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button class="nav-row" onclick="goToLayer(6)" onkeydown="handleLastMenuItemKeyDown(event)"> 
+                    <button type="menu" class="nav-row" onclick="goToLayer(6)" onkeydown="handleLastMenuItemKeyDown(event)" aria-label="開啟網路資源選單" aria-controls="網路資源選單" aria-expanded="false"> 
                         <!-- onkeydown="handleLastMenuItemKeyDown(event)"要改到之後裡面的最後一個按鈕 -->
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">language</span>
@@ -106,14 +107,14 @@
                         <span class="material-symbols-sharp">arrow_forward</span>
                     </button>
 
-                    <button class="nav-row">
+                    <a class="nav-row" aria-label="會員登入">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">account_circle</span>
                             <div>會員登入</div>
                         </div>
-                    </button>
+                    </a>
 
-                    <button class="nav-row theme-btn" onclick="changeTheme()">
+                    <button type="button" class="nav-row theme-btn" onclick="changeTheme()" aria-label="切換至深色模式">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">dark_mode</span>
                             <div class="nav-row-inner-text">切換至深色模式</div>

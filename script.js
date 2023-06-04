@@ -1,8 +1,13 @@
 var navBg = document.querySelector('.nav-bg');
 var nav = document.querySelector('nav');
+var menuOpenBtn = document.querySelector('.menu-open-btn');
+var menuCloseBtn = document.querySelector('.menu-close-btn');
 
 function toggleMenu() {
     if(nav.classList.contains('menu-opened')){
+        menuOpenBtn.setAttribute('aria-expanded', 'false');
+        menuCloseBtn.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
         nav.classList.remove('menu-opened')
         navBg.style.opacity = '0'
         setTimeout(() => {
@@ -10,6 +15,9 @@ function toggleMenu() {
             navBg.classList.add('display-none')
         }, 300)
     } else {
+        menuOpenBtn.setAttribute('aria-expanded', 'true');
+        menuCloseBtn.setAttribute('aria-expanded', 'true');
+        nav.setAttribute('aria-hidden', 'false');
         nav.classList.remove('display-none')
         navBg.classList.remove('display-none')
         setTimeout(() => {
@@ -21,9 +29,9 @@ function toggleMenu() {
 // toggleMenu()
 
 var translatePercentage = 20;
+var mainWindow = document.querySelector('.nav-layer-1');
 
 function goToLayer(layer) {
-    var mainWindow = document.querySelector('.nav-layer-1');
     var layerWindow = document.querySelector(`.nav-layer-${layer}`);
 
     layerWindow.classList.remove('display-none');

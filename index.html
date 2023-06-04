@@ -113,10 +113,10 @@
                         </div>
                     </button>
 
-                    <button class="nav-row" onclick="changeTheme()">
+                    <button class="nav-row theme-btn" onclick="changeTheme()">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">dark_mode</span>
-                            <div>切換暗黑模式</div>
+                            <div class="nav-row-inner-text">切換至深色模式</div>
                         </div>
                     </button>
                 </div>
@@ -132,10 +132,10 @@
                         </div>
                     </button>
 
-                    <button class="nav-row" onclick="changeContrast()">
+                    <button class="nav-row contrast-btn" onclick="changeContrast()">
                         <div class="nav-row-inner">
                             <span class="material-symbols-sharp">contrast</span>
-                            <div>色調調整</div>
+                            <div class="nav-row-inner-text">去飽和</div>
                         </div>
                     </button>
 
@@ -386,7 +386,7 @@
     <img src="./assets/slide-1.png" class="slider">
 
     <main>
-        <section>
+        <section class="section-content">
             <div>
                 <h2>最新公告</h2>
                 <a href="#" class="section-more" aria-label="更多">
@@ -409,7 +409,7 @@
             </a>
         </section>
 
-        <section>
+        <section class="section-content">
             <div>
                 <h2>最新活動</h2>
                 <a href="#" class="section-more" aria-label="更多">
@@ -435,23 +435,25 @@
 
 
 
-        <div class="main-nav">
-            <a href="#">
-                關於學會
-            </a>
-            <a href="#">
-                <div class="two-icons">
+        <section class="section-nav-container">
+            <h2>導覽列</h2>
+        
+            <div class="section-nav">
+                <a href="#">
+                    關於學會
+                </a>
+                <a href="#">
                     活動公告
-                </div>
-            </a>
-            <a href="#">
-                學會出版
-            </a>
-            <a onkeydown="handleLastMenuItemKeyDown(event)" href="#" >
-            <!-- onkeydown="handleLastMenuItemKeyDown(event)"要改到之後裡面的最後一個按鈕 -->
-                網路資源
-            </a>
-        </div>
+                </a>
+                <a href="#">
+                    學會出版
+                </a>
+                <a onkeydown="handleLastMenuItemKeyDown(event)" href="#" >
+                <!-- onkeydown="handleLastMenuItemKeyDown(event)"要改到之後裡面的最後一個按鈕 -->
+                    網路資源
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer>

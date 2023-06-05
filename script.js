@@ -244,7 +244,7 @@ var lastElement = document.querySelectorAll('.last-element');
 lastElement.forEach(element => {
     element.addEventListener('focus', () => {
         var focusedElement = document.activeElement;
-        var goToElement = document.querySelector(`${focusedElement.innerText}`);
+        var goToElement = document.querySelector(`${focusedElement.getAttribute('go-to')}`);
         goToElement.focus();
     });
 });

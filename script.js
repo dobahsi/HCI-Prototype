@@ -99,16 +99,25 @@ function changeContrast() {
     contrastStep++;
     var step = contrastStep % 2;
     if (step === 0) {
-        contrastBtn.setAttribute('aria-label', '切換高對比狀態，目前狀態：關閉')
-        root.classList.remove('mono-theme-palette')
+        contrastBtn.setAttribute('aria-label', '切換灰階狀態，目前狀態：關閉')
+        if (root.classList.contains('dark-mono-theme-palette')) {
+            root.classList.remove('dark-mono-theme-palette')
+            root.classList.add('dark-theme-palette')
+        } else {
+            root.classList.remove('light-mono-theme-palette')
+        }
         allImages.forEach(image => {image.style.filter = 'grayscale(0)';});
-        console.log(allImages[0].style);
-        contrastBtn.innerText = `高對比：關閉`;
+        contrastBtn.innerText = `灰階：關閉`;
     } else if (step === 1) {
-        contrastBtn.setAttribute('aria-label', '切換高對比狀態，目前狀態：關閉')
-        root.classList.add('mono-theme-palette')
+        contrastBtn.setAttribute('aria-label', '切換灰階狀態，目前狀態：開啟')
+        if (root.classList.contains('dark-theme-palette')) {
+            root.classList.remove('dark-theme-palette')
+            root.classList.add('dark-mono-theme-palette')
+        } else {
+            root.classList.add('light-mono-theme-palette')
+        }
         allImages.forEach(image => {image.style.filter = 'grayscale(1)';});
-        contrastBtn.innerText = `高對比：開啟`;
+        contrastBtn.innerText = `灰階：開啟`;
     }
 }
 
@@ -214,7 +223,7 @@ function changeReset() {
     contrastStep = 0;
     animationStep = 0;
 
-    contrastBtn.innerText = `高對比：關閉`;
+    contrastBtn.innerText = `灰階：關閉`;
     fontSizeBtn.innerText = `字體大小：中`;
     fontWeightBtn.innerText = `字體粗細：中`;
     letterSpacingBtn.innerText = `字體間距：中`;
@@ -227,11 +236,23 @@ var themeBtnIcon = document.querySelector(".theme-btn").querySelector("span");
 function changeTheme() {
     if (root.classList.contains('dark-theme-palette')) {
         themeBtn.setAttribute('aria-label', '切換深色模式，目前狀態：關閉')
+        if (root.classList.contains('dark-mono-theme-palette')) {
+            root.classList.remove('dark-mono-theme-palette')
+            root.classList.add('light-mono-theme-palette')
+        } else {
+            root.classList.remove('dark-theme-palette')
+        }
         root.classList.remove('dark-theme-palette');
         themeBtn.innerText = `深色模式：關閉`;
         themeBtnIcon.innerText = `light_mode`;
     } else {
         themeBtn.setAttribute('aria-label', '切換深色模式，目前狀態：開啟')
+        if (root.classList.contains('light-mono-theme-palette')) {
+            root.classList.remove('light-mono-theme-palette')
+            root.classList.add('dark-mono-theme-palette')
+        } else {
+            root.classList.add('dark-theme-palette')
+        }
         root.classList.add('dark-theme-palette')
         themeBtn.innerText = `深色模式：開啟`;
         themeBtnIcon.innerText = `dark_mode`;

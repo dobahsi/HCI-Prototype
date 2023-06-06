@@ -92,21 +92,23 @@ var letterSpacingBtn = document.querySelector(".letter-spacing-btn").querySelect
 var contrastBtn = document.querySelector(".contrast-btn").querySelector(".nav-row-inner-text");
 var animationBtn = document.querySelector(".animation-btn").querySelector(".nav-row-inner-text");
 
+var sectionMoreBtn = document.querySelectorAll(".section-more");
+
 
 function changeContrast() {
     contrastStep++;
     var step = contrastStep % 2;
     if (step === 0) {
-        contrastBtn.setAttribute('aria-label', '切換去飽和狀態，目前狀態：關閉')
+        contrastBtn.setAttribute('aria-label', '切換高對比狀態，目前狀態：關閉')
         root.classList.remove('mono-theme-palette')
         allImages.forEach(image => {image.style.filter = 'grayscale(0)';});
         console.log(allImages[0].style);
-        contrastBtn.innerText = `去飽和：關閉`;
+        contrastBtn.innerText = `高對比：關閉`;
     } else if (step === 1) {
-        contrastBtn.setAttribute('aria-label', '切換去飽和狀態，目前狀態：關閉')
+        contrastBtn.setAttribute('aria-label', '切換高對比狀態，目前狀態：關閉')
         root.classList.add('mono-theme-palette')
         allImages.forEach(image => {image.style.filter = 'grayscale(1)';});
-        contrastBtn.innerText = `去飽和：開啟`;
+        contrastBtn.innerText = `高對比：開啟`;
     }
 }
 
@@ -159,19 +161,23 @@ function changeLetterSpacing() {
     letterSpacingStep++;
     var step = letterSpacingStep % 3;
     var spacing = 'normal';
+    console.log(sectionMoreBtn);
 
     if (step === 0) {
         letterSpacingBtn.setAttribute('aria-label', '切換字體間距，目前間距：中')
         spacing = 'normal';
         letterSpacingBtn.innerText = `字體間距：中`;
+        sectionMoreBtn.forEach(button => {button.style.marginBlockStart = '5rem';});
     } else if (step === 1) {
         letterSpacingBtn.setAttribute('aria-label', '切換字體間距，目前間距：大')
         spacing = '0.3em';
         letterSpacingBtn.innerText = `字體間距：大`;
+        sectionMoreBtn.forEach(button => {button.style.marginBlockStart = '7rem';});
     } else if (step === 2) {
         letterSpacingBtn.setAttribute('aria-label', '切換字體間距，目前間距：更大')
         spacing = '0.5em';
         letterSpacingBtn.innerText = `字體間距：更大`;
+        sectionMoreBtn.forEach(button => {button.style.marginBlockStart = '7rem';});
     }
 
     root.style.letterSpacing = spacing;
@@ -208,7 +214,7 @@ function changeReset() {
     contrastStep = 0;
     animationStep = 0;
 
-    contrastBtn.innerText = `去飽和：關閉`;
+    contrastBtn.innerText = `高對比：關閉`;
     fontSizeBtn.innerText = `字體大小：中`;
     fontWeightBtn.innerText = `字體粗細：中`;
     letterSpacingBtn.innerText = `字體間距：中`;
